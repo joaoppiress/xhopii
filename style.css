@@ -1,0 +1,140 @@
+body{
+    margin:0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}   
+
+header{
+    width: 100%;
+    height: 100px;
+}
+
+header .cabecalho-xhopii{
+    width: 100%;
+    height: 80px;
+    background-color: rgb(225, 96, 61);
+    display: flex;
+    justify-content: flex-start;
+}
+
+header .cabecalho-xhopii .cabecalho-xhopii-logo{
+    width: 20%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+header .cabecalho-xhopii .cabecalho-xhopii-logo img{
+    width: 45px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+header .cabecalho-xhopii .cabecalho-xhopii-logo h1{
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    margin-left: 8px;
+    margin-top: 30px;
+}
+
+header .cabecalho-menu{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(215, 215, 215);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+header .cabecalho-menu a{
+    text-decoration: none;
+    color: rgb(225, 96, 61);
+    font-size: 25px;
+
+    margin: 10px;
+}
+
+.container {
+  display: flex;           /* Ativa o Flexbox */
+  flex-direction: row;     /* Padrão: coloca os itens em linha (um ao lado do outro) */
+  gap: 20px;              /* Espaçamento entre as sections (opcional) */
+}
+.conteudo{
+
+    width: 50%;
+    padding-left: 100px;
+    padding-right: 10px;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.conteudo .conteudo-imagens{
+    width: 10%;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 200px;
+    margin-left: 10%;
+}
+.conteudo .conteudo-imagens img{
+    width: 100px;
+    height: 120px;
+    margin: 10px;
+   filter: opacity(0.7);
+}
+.conteudo .conteudo-imagem{
+    width: 440px;
+    height: 485px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 30px;
+}
+
+.conteudo .conteudo-imagem img{
+    width: 100%;      
+    height: 100%;     
+}
+
+.especificacao{
+    width: 200px;
+    height: 500px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.especificacao .especificacao-nome{
+    width: 700px;
+    height: 485px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left:0;
+    margin: 0;
+
+}
+
+.especificacao .especificacao-nome h1{
+
+    font-size: 45px;
+    margin-top: 20px;
+}
+.especificacao .especificacao-nome h2{
+    font-size: 40px;
+    color: rgb(225, 96, 61);
+    margin-top: 0;
+}
