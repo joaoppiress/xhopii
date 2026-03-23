@@ -1,6 +1,6 @@
 body{
     margin:0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:  Calibri, 'Trebuchet MS', sans-serif;
     /* Arleto*/
 }   
 
@@ -115,7 +115,7 @@ header .cabecalho-menu a{
     margin-top: 80px;
 }
 
-.especificacao .especificacao-nome{
+.especificacao .especificacao-sobre{
     width: 700px;
     height: 485px;
     background-color: rgb(255, 255, 255);
@@ -128,12 +128,12 @@ header .cabecalho-menu a{
 
 }
 
-.especificacao .especificacao-nome h1{
+.especificacao .especificacao-sobre h1{
 
-    font-size: 45px;
+    font-size: 40px;
     margin-top: 20px;
 }
-.especificacao .especificacao-nome h2{
+.especificacao .especificacao-sobre h2{
     font-size: 40px;
     color: rgb(225, 96, 61);
     margin-top: 0;
