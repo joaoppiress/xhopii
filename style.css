@@ -105,14 +105,14 @@ header .cabecalho-menu a{
 }
 
 .especificacao{
-    width: 200px;
-    height: 500px;
+    width: 100px;
+    height: 300px;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .especificacao .especificacao-sobre{
@@ -137,4 +137,52 @@ header .cabecalho-menu a{
     font-size: 40px;
     color: rgb(225, 96, 61);
     margin-top: 0;
+}
+.especificacao .especificacao-sobre #p1{
+    font-size: 20px;
+    margin-top: 0;
+}
+.especificacao .especificacao-sobre #p2{
+    font-size: 20px;
+
+    margin-top: 0;
+}
+.especificacao .especificacao-modelos {
+    width: 700px;
+    height: auto; /* Ajustado para não prender o conteúdo */
+    display: flex;
+    flex-direction: row;
+    gap: 20px;           
+    margin: 0;
+}
+
+/* Esconde a bolinha do rádio */
+.btn-modelo input[type="radio"] {
+    display: none;
+}
+
+/* Estilo do "Botão" */
+.btn-modelo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 2px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #fff;
+    min-width: 60px;
+    transition: all 0.2s;
+}
+
+/* Quando o rádio interno estiver checado, estiliza a label pai */
+.btn-modelo:has(input:checked) {
+    border-color: #ff4500; /* Laranja da Xhopii */
+    color: #ff4500;
+    box-shadow: 0 0 2px rgba(255, 69, 0, 0.5);
+}
+
+/* Efeito de hover para parecer clicável */
+.btn-modelo:hover {
+    background-color: #f9f9f9;
 }
