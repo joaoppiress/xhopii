@@ -4,9 +4,13 @@ body{
     /* Arleto*/
 }   
 
-header{
-    width: 100%;
-    height: 100px;
+header {
+    background-color: #fff;
+    padding: 15px 15%; /* Aumentamos o recuo lateral para centralizar o conteúdo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
 }
 
 header .cabecalho-xhopii{
