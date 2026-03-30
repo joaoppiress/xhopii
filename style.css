@@ -55,9 +55,10 @@ header .cabecalho-menu a{
 }
 
 .container {
-  display: flex;           /* Ativa o Flexbox */
-  flex-direction: row;     /* Padrão: coloca os itens em linha (um ao lado do outro) */
-  gap: 20px;              /* Espaçamento entre as sections (opcional) */
+  display: flex;  
+  flex-wrap: wrap;        
+  flex-direction: row;    
+  gap: 20px;              
 }
 .conteudo{
 
@@ -79,15 +80,40 @@ header .cabecalho-menu a{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 200px;
-    margin-left: 10%;
+    margin-top: 215px;
+    margin-left: 8%;
 }
 .conteudo .conteudo-imagens img{
-    width: 100px;
-    height: 120px;
-    margin: 10px;
+    width: 90px;
+    height: 90px;
+    margin: 0px;
    filter: opacity(0.7);
 }
+
+/* 1. Esconde a bolinha do rádio original */
+.btn-camisa input[type="radio"] {
+    display: none;
+}
+
+/* 2. Container da miniatura (Label) */
+.btn-camisa {
+    display: block;
+    cursor: pointer;
+    border: 2px solid transparent; /* Borda invisível para não "pular" quando selecionar */
+    margin-bottom: 5px;
+    transition: all 0.2s;
+}
+
+/* 3. Quando o rádio estiver marcado, aplica a borda na Label (igual aos modelos) */
+.btn-camisa:has(input:checked) {
+    border-color: rgb(225, 96, 61);
+}
+
+/* 4. Aumenta a opacidade da imagem quando selecionada */
+.btn-camisa:has(input:checked) img {
+    filter: opacity(1);
+}
+
 .conteudo .conteudo-imagem{
     width: 440px;
     height: 485px;
@@ -96,7 +122,7 @@ header .cabecalho-menu a{
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-left: 30px;
+    margin-left: 60px;
 }
 
 .conteudo .conteudo-imagem img{
@@ -106,7 +132,7 @@ header .cabecalho-menu a{
 
 .especificacao{
     width: 100px;
-    height: 300px;
+    /*height: 300px;*/
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
@@ -117,7 +143,7 @@ header .cabecalho-menu a{
 
 .especificacao .especificacao-sobre{
     width: 700px;
-    height: 485px;
+    height: auto;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
@@ -125,18 +151,18 @@ header .cabecalho-menu a{
     align-items: flex-start;
     margin-left:0;
     margin: 0;
-
+    
 }
 
 .especificacao .especificacao-sobre h1{
 
-    font-size: 40px;
-    margin-top: 20px;
+    font-size: 35px;
+    margin-bottom: 10px;
 }
 .especificacao .especificacao-sobre h2{
-    font-size: 40px;
+    font-size: 35px;
     color: rgb(225, 96, 61);
-    margin-top: 0;
+    margin:0 0 10px 0;
 }
 .especificacao .especificacao-sobre #p1{
     font-size: 20px;
@@ -220,12 +246,12 @@ header .cabecalho-menu a{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 2px;
+    padding: 8px 1px ;
     border: 1px solid #ccc;
     cursor: pointer;
     font-size: 14px;
     background-color: #fff;
-    min-width: 60px;
+    min-width: 35px;
     transition: all 0.2s;
 }
 
@@ -269,7 +295,7 @@ header .cabecalho-menu a{
         font-family: 'Roboto', sans-serif; /* Ou sans-serif padrão */
         
         /* Espaçamento e Tamanho */
-        padding: 12px 24px;
+        padding: 30px 20px;
         min-width: 100px;
         cursor: pointer;
         
