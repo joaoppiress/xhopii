@@ -59,14 +59,15 @@ header .cabecalho-menu a{
 }
 
 .container {
-  display: flex;           /* Ativa o Flexbox */
-  flex-direction: row;     /* Padrão: coloca os itens em linha (um ao lado do outro) */
-  gap: 20px;              /* Espaçamento entre as sections (opcional) */
+  display: flex;  
+  flex-wrap: wrap;        
+  flex-direction: row;    
+  gap: 20px;              
 }
 .conteudo{
 
-    width: 50%;
-    padding-left: 100px;
+    width: 32%;
+    padding-left: 200px;
     padding-right: 10px;
     margin-top: 120px;
     display: flex;
@@ -83,15 +84,40 @@ header .cabecalho-menu a{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 200px;
-    margin-left: 10%;
+    margin-top: 215px;
+    margin-left: 8%;
 }
 .conteudo .conteudo-imagens img{
-    width: 100px;
-    height: 120px;
-    margin: 10px;
+    width: 90px;
+    height: 90px;
+    margin: 0px;
    filter: opacity(0.7);
 }
+
+/* 1. Esconde a bolinha do rádio original */
+.btn-camisa input[type="radio"] {
+    display: none;
+}
+
+/* 2. Container da miniatura (Label) */
+.btn-camisa {
+    display: block;
+    cursor: pointer;
+    border: 2px solid transparent; /* Borda invisível para não "pular" quando selecionar */
+    margin-bottom: 5px;
+    transition: all 0.2s;
+}
+
+/* 3. Quando o rádio estiver marcado, aplica a borda na Label (igual aos modelos) */
+.btn-camisa:has(input:checked) {
+    border-color: rgb(225, 96, 61);
+}
+
+/* 4. Aumenta a opacidade da imagem quando selecionada */
+.btn-camisa:has(input:checked) img {
+    filter: opacity(1);
+}
+
 .conteudo .conteudo-imagem{
     width: 440px;
     height: 485px;
@@ -100,7 +126,7 @@ header .cabecalho-menu a{
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-left: 30px;
+    margin-left: 60px;
 }
 
 .conteudo .conteudo-imagem img{
@@ -109,19 +135,19 @@ header .cabecalho-menu a{
 }
 
 .especificacao{
-    width: 200px;
-    height: 500px;
+    width: 100px;
+    /*height: 300px;*/
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    margin-top: 80px;
+    align-items: flex-start;
+    margin-top: 60px;
 }
 
 .especificacao .especificacao-sobre{
     width: 700px;
-    height: 485px;
+    height: auto;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
@@ -129,16 +155,171 @@ header .cabecalho-menu a{
     align-items: flex-start;
     margin-left:0;
     margin: 0;
-
+    
 }
 
 .especificacao .especificacao-sobre h1{
 
-    font-size: 40px;
-    margin-top: 20px;
+    font-size: 35px;
+    margin-bottom: 10px;
 }
 .especificacao .especificacao-sobre h2{
-    font-size: 40px;
+    font-size: 35px;
     color: rgb(225, 96, 61);
+    margin:0 0 10px 0;
+}
+.especificacao .especificacao-sobre #p1{
+    font-size: 20px;
     margin-top: 0;
 }
+.especificacao .especificacao-sobre #p2{
+    font-size: 20px;
+
+    margin-top: 0;
+}
+.especificacao .especificacao-modelos {
+    width: 700px;
+    height: auto; /* Ajustado para não prender o conteúdo */
+    display: flex;
+    flex-direction: row;
+    gap: 20px;           
+    margin: 0;
+}
+
+/* Esconde a bolinha do rádio */
+.btn-modelo input[type="radio"] {
+    display: none;
+}
+
+/* Estilo do "Botão" */
+.btn-modelo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 2px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #fff;
+    min-width: 60px;
+    transition: all 0.2s;
+}
+
+/* Quando o rádio interno estiver checado, estiliza a label pai */
+.btn-modelo:has(input:checked) {
+    border-color: rgb(225, 96, 61); /* Laranja da Xhopii */
+    color: rgb(225, 96, 61);
+    box-shadow: 0 0 2px rgba(255, 69, 0, 0.5);
+}
+
+/* Efeito de hover para parecer clicável */
+.btn-modelo:hover {
+    background-color: #f9f9f9;
+}
+
+.especificacao .especificacao-sobre-tamanho{
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 0;
+}
+.especificacao .especificacao-sobre-tamanho p{
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.especificacao .especificacao-tamanho {
+    width: 700px;
+    height: auto; /* Ajustado para não prender o conteúdo */
+    display: flex;
+    flex-direction: row;
+    gap: 20px;           
+    margin-top: 10px;
+}
+
+/* Esconde a bolinha do rádio */
+.btn-tamanho input[type="radio"] {
+    display: none;
+}
+
+/* Estilo do "Botão" */
+.btn-tamanho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 1px ;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #fff;
+    min-width: 35px;
+    transition: all 0.2s;
+}
+
+/* Quando o rádio interno estiver checado, estiliza a label pai */
+.btn-tamanho:has(input:checked) {
+    border-color: rgb(225, 96, 61); /* Laranja da Xhopii */
+    color: rgb(225, 96, 61);
+    box-shadow: 0 0 2px rgba(255, 69, 0, 0.5);
+}
+
+/* Efeito de hover para parecer clicável */
+.btn-tamanho:hover {
+    background-color: #f9f9f9;
+}
+
+.especificacao .especificacao-tamanho-selecionado{
+    width: 230px;
+    height: 100px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 0;
+}
+
+.especificacao .especificacao-tamanho-selecionado p{
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.especificacao .especificacao-tamanho-selecionado .btn-comprar{
+        /* Cores e Fundo */
+        background-color: rgb(225, 96, 61); /* Laranja característico do marketplace */
+        color: #FFFFFF;
+        border: none;
+        
+        /* Tipografia */
+        font-size: 16px;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif; /* Ou sans-serif padrão */
+        
+        /* Espaçamento e Tamanho */
+        padding: 30px 20px;
+        min-width: 100px;
+        cursor: pointer;
+        
+        /* Alinhamento no seu Flexbox */
+        align-self: flex-start; /* Garante que ele fique à esquerda no container column */
+        margin-top: 10px;
+        
+        /* Suavidade na interação */
+        transition: background-color 0.2s ease, transform 0.1s;
+    }
+    
+    /* Efeito ao passar o mouse (Hover) */
+    .btn-comprar:hover {
+        background-color: #E64A19; /* Um laranja levemente mais escuro */
+    }
+    
+    /* Efeito de clique (Active) */
+    .btn-comprar:active {
+        transform: scale(0.98); /* Dá uma sensação de "afundar" ao clicar */
+    }
+
+
+
