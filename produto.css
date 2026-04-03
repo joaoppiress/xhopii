@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+header .cabecalho-xhopii {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(225, 96, 61);
+    display: flex;
+    justify-content: space-between;
+}
+
+header .cabecalho-xhopii .cabecalho-xhopii-logo {
+    width: 20%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+header .cabecalho-xhopii .cabecalho-xhopii-logo img {
+    width: 38px;
+    height: 42px;
+    margin-bottom: 14px;
+}
+
+header .cabecalho-xhopii .cabecalho-xhopii-logo h1 {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    margin-left: 7px;
+    margin-top: 24px;
+}
+
+header .cabecalho-xhopii .cabecalho-xhopii-sair {
+    width: 20%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header .cabecalho-xhopii .cabecalho-xhopii-sair a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    margin-right: 18px;
+}
+
+header .cabecalho-menu {
+    width: 100%;
+    height: 45px;
+    background-color: #FB7730;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header .cabecalho-menu a {
+    text-decoration: none;
+    font-size: 17px;
+    color: #fff;
+    margin: 0 8px;
+}
+
+main {
+    background-color: #C3C3C3;
+    min-height: calc(100vh - 115px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.cadastro-produto {
+    background-color: #fff;
+    padding: 28px 45px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.cadastro-produto h2 {
+    color: #FB5630;
+    font-size: 17px;
+    margin-bottom: 18px;
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+.cadastro-produto form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 6px;
+}
+
+.cadastro-produto input[type="text"],
+.cadastro-produto input[type="email"],
+.cadastro-produto input[type="tel"],
+.cadastro-produto input[type="password"],
+.cadastro-produto input[type="date"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 3px;
+    padding: 9px 10px;
+    font-size: 12px;
+    outline: none;
+    width: 100%;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.cadastro-produto input:focus {
+    border-color: #FB5630;
+}
+
+.cadastro-produto input::placeholder {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.foto-perfil {
+    color: #FB5630;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 3px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.input-arquivo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-arquivo {
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    background-color: #fff;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-arquivo span {
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: #999;
+}
+
+.cadastro-produto button[type="submit"] {
+    background-color: #FB5630;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.cadastro-produto button[type="submit"]:hover {
+    background-color: #e05e1a;
+}
+
+/* FOOTER */
+.footer-xhopii {
+    background-color: #fbfbfb;
+    padding: 60px 15%;
+    width: 100%;
+    border-top: 1px solid #eeeeee;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-col h4 {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.footer-col nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-col a {
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
