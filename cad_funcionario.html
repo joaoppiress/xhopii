@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="cad_funcionario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Xhopii</title>
+</head>
+<body>
+    <header>
+        <section class="cabecalho-xhopii">
+            <section class="cabecalho-xhopii-logo">   
+                <img src="img/logo.png">
+                <h1>Xhopii</h1>
+            </section>
+            <section class="cabecalho-xhopii-sair">
+                <a href="index.html">Sair</a>
+            </section>
+        </section>
+        <section class="cabecalho-menu">
+            <nav>
+                <ul>
+                    <a href="index.html">Home</a>
+                    <a href="cad_cliente.html">Cadastro Cliente</a>
+                    <a href="cad_funcionario.html">Cadastro Funcionário</a>
+                    <a href="cad_produto.html">Cadastro Produto</a>
+                    <a href="ver_clientes.html">Ver Clientes</a>
+                    <a href="ver_funcionarios.html">Ver Funcionários</a>
+                    <a href="ver_produtos.html">Ver Produtos</a>
+                </ul>
+            </nav>
+        </section>
+    </header>
+  <main>
+    <section class="cadastro-funcionario">
+        <h2>Cadastrar Funcionário</h2>
+        <form>
+            <input type="text" placeholder="Nome">
+            <input type="text" placeholder="Sobrenome">
+            <input type="text" placeholder="CPF">
+            <input type="date" placeholder="dd/mm/aaaa">
+            <input type="tel" placeholder="Telefone">
+            <input type="text" placeholder="Cargo/Função">
+            <input type="text" placeholder="Salário">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Senha">
+
+            <label class="foto-perfil">Selecionar foto de perfil:</label>
+            <section class="input-arquivo">
+                <input type="file" id="foto" hidden>
+                <label for="foto" class="btn-arquivo">Escolher arquivo</label>
+                <span>Nenhum arquivo escolhido</span>
+            </section>
+
+            <button type="submit">CADASTRAR</button>
+        </form>
+    </section>
+</main>
+    <footer class="footer-xhopii">
+        <div class="footer-container">
+            <section class="footer-col">
+                <h4>ATENDIMENTO AO CLIENTE</h4>
+                <nav>
+                    <a href="#">Central de Ajuda</a>
+                    <a href="#">Como Comprar</a>
+                    <a href="#">Métodos de Pagamento</a>
+                    <a href="#">Garantia Xhopii</a>
+                    <a href="#">Devolução e Reembolso</a>
+                </nav>
+            </section>
+    
+            <section class="footer-col">
+                <h4>SOBRE A XHOPII</h4>
+                <nav>
+                    <a href="#">Sobre Nós</a>
+                    <a href="#">Políticas Xhopii</a>
+                    <a href="#">Privacidade</a>
+                    <a href="#">Programa de Afiliados</a>
+                </nav>
+            </section>
+    
+            <section class="footer-col">
+                <h4>PAGAMENTO</h4>
+                <figure class="pagamento-icones">
+                    <img src="img/cartoes.png" alt="Métodos de pagamento">
+                </figure>
+            </section>
+    
+            <section class="footer-col">
+                <h4>SIGA-NOS</h4>
+                <nav>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
+                </nav>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>
