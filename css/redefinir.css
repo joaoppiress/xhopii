@@ -1,26 +1,15 @@
-
-/*=======================================================index.html=============================================================*/
-
-/* RESET FUNDAMENTAL - Impede que o conteúdo fuja para as laterais */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-.body-index {
-    width: 100%;
-    overflow-x: hidden; /* Evita barra de rolagem horizontal */
-}
-
-/* HEADER */
 .header-index {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 15%;
-    background-color: #ffffff;
+    background-color: #c6c6c6;
     height: 80px;
     width: 100%;
     border-bottom: 1px solid #e0e0e0;
@@ -45,24 +34,23 @@
     font-size: 24px;
     color: #333;
 }
-
 .header-index-ajuda a {
     text-decoration: none;
     color: rgb(225, 96, 61);
-    font-size: 14px;
+    font-size: 15px;
 }
-
-/* CORPO LARANJA */
 .login-main {
     background-color: rgb(225, 96, 61);
     width: 100%;
-    min-height: 600px;
+    min-height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 60px 0;
 }
-
+.login-main{
+    background-color: white;
+}
 .login-card {
     background-color: #ffffff;
     width: 400px;
@@ -80,7 +68,6 @@
     display: flex;
     justify-content: center;
 }
-
 .input-login {
     width: 100%;
     padding: 12px;
@@ -157,67 +144,83 @@
     height: 18px; /* Tamanho padronizado dos ícones sociais */
     width: auto;
 }
-
-/* --- Ajuste do Rodapé (Para não espalhar demais em telas grandes) --- */
-.footer-container {
-    display: flex;
-    flex-direction: row ;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px; /* Limita a largura para o conteúdo não fugir */
-    margin: 0 auto;    /* Centraliza o container do rodapé */
-}
-
-.pagamento-icones img {
-    max-width: 200px;
-    height: auto;
-}
-
-.txt-cadastrar {
-    text-align: center;
-    font-size: 14px;
-    color: #999;
-}
-
-.txt-cadastrar a {
-    color: rgb(225, 96, 61);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* FOOTER */
-.footer-xhopii {
+.footer-completo {
     background-color: #fbfbfb;
-    padding: 60px 15%;
+    border-top: 1px solid #e0e0e0;
+    padding: 40px 0 20px 0;
+    margin-top: 10px;
     width: 100%;
-    border-top: 1px solid #eeeeee;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.footer-col {
-    display: flex;
-    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0 20px;
 }
 
 .footer-col h4 {
     font-size: 12px;
     color: #333;
-    margin-bottom: 20px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
-.footer-col nav {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-col a {
-    text-decoration: none;
-    color: #666;
+.footer-col ul li {
     font-size: 12px;
-    margin-bottom: 10px;
+    color: #757575;
+    margin-bottom: 8px;
+    list-style: none;
+}
+
+.pay-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 180px;
+}
+
+.pay-grid img {
+    height: 20px;
+    width: auto;
+    background: white;
+    padding: 2px;
+    border: 1px solid #eee;
+    border-radius: 2px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #757575;
+}
+
+.social-item img { height: 18px; width: auto; }
+
+.qr-img {
+    background: white;
+    padding: 5px;
+    border: 1px solid #ddd;
+    width: 90px;
+}
+
+.app-links img {
+    display: block;
+    height: 20px;
+    margin: 5px 0;
+}
+
+.copyright-barra {
+    text-align: center;
+    border-top: 1px solid #eee;
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #999;
 }
