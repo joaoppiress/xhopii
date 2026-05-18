@@ -23,7 +23,7 @@ class BancoDeDados{
     
     public function inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha){
         
-        $conexao = conectarBD();
+        $conexao = $this->conectarBD();
         $consulta = "INSERT INTO cliente (cpf, nome, sobrenome, dataNascimento, telefone, email, senha) 
                      VALUES ('$cpf','$nome','$sobrenome','$dataNasc','$telefone','$email','$senha')";
         mysqli_query($conexao,$consulta);
@@ -31,7 +31,7 @@ class BancoDeDados{
     
     public function inserirProduto($produto){
         
-        $conexao = conectarBD();
+        $conexao = $this->conectarBD();
         $consulta = "INSERT INTO produto (nome, fabricante, descricao, valor) 
                      VALUES ('$produto->get_Nome()',
                              '$produto->get_Fabricante()',
@@ -42,7 +42,7 @@ class BancoDeDados{
     
     public function inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario){
         
-        $conexao = conectarBD();
+        $conexao = $this->conectarBD();
         $consulta = "INSERT INTO funcionario (cpf, nome, sobrenome, dataNascimento, telefone, email, salario) 
                      VALUES ('$cpf','$nome','$sobrenome','$dataNasc','$telefone','$email','$salario')";
         mysqli_query($conexao,$consulta);
@@ -50,14 +50,14 @@ class BancoDeDados{
     
     public function retornarClientes(){
     
-        $conexao = conectarBD();
+        $conexao = $this->conectarBD();
         $consulta = "SELECT * FROM cliente";
         $listaClientes = mysqli_query($conexao,$consulta);
         return $listaClientes;
     }
     
     public function retornarProdutos(){
-        $conexao = conectarBD();
+        $conexao = $this->conectarBD();
         $consulta = "SELECT * FROM produto";
         $listaProdutos = mysqli_query($conexao,$consulta);
         return $listaProdutos;
