@@ -1,61 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="cad_funcionario.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <title>Xhopii</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../css/redefinir.css">
+    <title>Redifinir Senha</title>
 </head>
 <body>
     <header>
-        <section class="cabecalho-xhopii">
-            <section class="cabecalho-xhopii-logo">   
-                <img src="img/logo.png">
-                <h1>Xhopii</h1>
+        <section class ="header-index">
+            <section class="header-index-logo">   
+           <img src="img/logo.png" alt="Xhopii Logo">
+            <h1>Xhopii</h1>    
+            <span class="divisor-v"></span>
+            <p>Redefinir senha</p>         
             </section>
-            <section class="cabecalho-xhopii-sair">
-                <a href="index.html">Sair</a>
-            </section>
-        </section>
-        <section class="cabecalho-menu">
-            <nav>
-                <ul>
-                    <a href="index.html">Home</a>
-                    <a href="cad_cliente.html">Cadastro Cliente</a>
-                    <a href="cad_funcionario.html">Cadastro Funcionário</a>
-                    <a href="cad_produto.html">Cadastro Produto</a>
-                    <a href="ver_clientes.html">Ver Clientes</a>
-                    <a href="ver_funcionarios.html">Ver Funcionários</a>
-                    <a href="ver_produtos.html">Ver Produtos</a>
-                </ul>
-            </nav>
+             <nav class="header-index-ajuda">
+            <a href="#">Precisa de ajuda?</a>
+        </nav>
         </section>
     </header>
-  <main>
-    <section class="cadastro-funcionario">
-        <h2>Cadastrar Funcionário</h2>
-        <form>
-            <input type="text" placeholder="Nome">
-            <input type="text" placeholder="Sobrenome">
-            <input type="text" placeholder="CPF">
-            <input type="date" placeholder="dd/mm/aaaa">
-            <input type="tel" placeholder="Telefone">
-            <input type="text" placeholder="Cargo/Função">
-            <input type="text" placeholder="Salário">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Senha">
 
-            <label class="foto-perfil">Selecionar foto de perfil:</label>
-            <section class="input-arquivo">
-                <input type="file" id="foto" hidden>
-                <label for="foto" class="btn-arquivo">Escolher arquivo</label>
-                <span>Nenhum arquivo escolhido</span>
-            </section>
-
-            <button type="submit">CADASTRAR</button>
-        </form>
-    </section>
-</main>
+    <main class="login-main">
+        <article class="login-card">
+            <h2>Redefinir senha</h2>
+            <form>
+                <input type="text" placeholder="Email" class="input-login">
+                <button type="submit" class="btn-login">ENVIAR</button>
+            </form>
+        </article>
+    </main>
      <footer class="footer-completo">
         <section class="footer-container">
 

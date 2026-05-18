@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="produto.css">
+    <link rel="stylesheet" href="../css/cad_cliente.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title>Xhopii</title>
 </head>
@@ -14,34 +14,36 @@
                 <h1>Xhopii</h1>
             </section>
             <section class="cabecalho-xhopii-sair">
-                <a href="index.html">Sair</a>
+                <a href="index.php">Sair</a>
             </section>
         </section>
         <section class="cabecalho-menu">
             <nav>
                 <ul>
-                    <a href="index.html">Home</a>
-                    <a href="cad_cliente.html">Cadastro Cliente</a>
-                    <a href="cad_funcionario.html">Cadastro Funcionário</a>
-                    <a href="cad_produto.html">Cadastro Produto</a>
-                    <a href="ver_clientes.html">Ver Clientes</a>
-                    <a href="ver_funcionarios.html">Ver Funcionários</a>
-                    <a href="ver_produtos.html">Ver Produtos</a>
+                    <a href="index.php">Home</a>
+                    <a href="cad_cliente.php">Cadastro Cliente</a>
+                    <a href="cad_funcionario.php">Cadastro Funcionário</a>
+                    <a href="cad_produto.php">Cadastro Produto</a>
+                    <a href="ver_clientes.php">Ver Clientes</a>
+                    <a href="ver_funcionarios.php">Ver Funcionários</a>
+                    <a href="ver_produtos.php">Ver Produtos</a>
                 </ul>
             </nav>
         </section>
     </header>
   <main>
-    <section class="cadastro-produto">
-        <h2>Cadastrar Produto</h2>
+    <section class="cadastro-cliente">
+        <h2>Cadastrar Cliente</h2>
         <form>
             <input type="text" placeholder="Nome">
-            <input type="text" placeholder="Fabricante">
-            <input type="text" placeholder="Descrição">
-            <input type="text" placeholder="Valor">
-            <input type="text" placeholder="Quantidade">
+            <input type="text" placeholder="Sobrenome">
+            <input type="text" placeholder="CPF">
+            <input type="date" placeholder="dd/mm/aaaa">
+            <input type="tel" placeholder="Telefone">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Senha">
 
-            <label class="foto-perfil">Selecionar foto do produto:</label>
+            <label class="foto-perfil">Selecionar foto de perfil:</label>
             <section class="input-arquivo">
                 <input type="file" id="foto" hidden>
                 <label for="foto" class="btn-arquivo">Escolher arquivo</label>
@@ -52,7 +54,7 @@
         </form>
     </section>
 </main>
-    <footer class="footer-completo">
+     <footer class="footer-completo">
         <section class="footer-container">
 
             <section class="footer-col">

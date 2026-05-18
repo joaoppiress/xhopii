@@ -1,9 +1,9 @@
 <!-- Pronto = Pires-->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="ver_produtos.css">
+    <link rel="stylesheet" href="../css/ver_produtos.css">
     <title>Xhopii</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
         <section class="cabecalho-menu">
             <nav>
                 <ul>
-                    <a href="home.html">Home</a>
+                    <a href="home.php">Home</a>
                     <a href="#">Cadastro Cliente</a>
                     <a href="#">Cadastro Funcionário</a>
                     <a href="#">Cadastro Produto</a>

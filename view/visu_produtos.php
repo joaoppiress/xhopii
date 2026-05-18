@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../css/visu_produtos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title>Xhopii</title>
 </head>
@@ -14,140 +14,84 @@
                 <h1>Xhopii</h1>
             </section>
             <section class="cabecalho-xhopii-sair">
-                <a href="index.html">Sair</a>
+                <a href="index.php">Sair</a>
             </section>
         </section>
         <section class="cabecalho-menu">
             <nav>
-                <ul>
-                    <a href="index.html">Home</a>
-                    <a href="#">Cadastro Cliente</a>
-                    <a href="#">Cadastro Funcionário</a>
-                    <a href="#">Cadastro Produto</a>
-                    <a href="#">Ver Clientes</a>
-                    <a href="#">Ver Funcionários</a>
-                    <a href="#">Ver Produtos</a>
-                </ul>
+                <a href="index.php">Home</a>
+                <a href="#">Cadastro Cliente</a>
+                <a href="#">Cadastro Funcionário</a>
+                <a href="#">Cadastro Produto</a>
+                <a href="#">Ver Clientes</a>
+                <a href="#">Ver Funcionários</a>
+                <a href="#">Ver Produtos</a>
             </nav>
         </section>
-    </header>
+    </header>        
 
-    <main class="container-fluid p-0">
-        <section class="conteudo">
-            <section class="conteudo-carrossel">
-
-               <main class="container-fluid">
-    <section class="conteudo">
-        <section class="conteudo-carrossel">
-
-            <section id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <section class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                </section>
-                <section class="carousel-inner">
-                    <section class="carousel-item active">
-                        <img src="img/carrossel1.png" class="d-block w-100" alt="Slide 1">
-                    </section>
-                    <section class="carousel-item">
-                        <img src="img/carrossel2.png" class="d-block w-100" alt="Slide 2">
-                    </section>
-                    <section class="carousel-item">
-                        <img src="img/carrossel3.png" class="d-block w-100" alt="Slide 3">
-                    </section>
-                    <section class="carousel-item">
-                        <img src="img/carrossel4.png" class="d-block w-100" alt="Slide 4">
-                    </section>
-                </section>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Próximo</span>
-                </button>
-            </section>
-
-     
-            </section>
-        </section>
-
+    <main>
         <section class="conteudo-produtos">
-    <h2 class="produtos-titulo">DESCOBERTAS DO DIA</h2>
+            <h2 class="produtos-titulo">PRODUTOS</h2>
 
-    <section class="produtos-grid">
+            <section class="produtos-grid">
+                <article class="produto-card">
+                    <img src="img/produto1.png" alt="Produto">
+                    <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
+                    <p class="produto-info">
+                        <strong class="label-escuro">Fabricante:</strong> 
+                        <span class="texto-apagado">Eletiva Uniformes</span>
+                    </p>
+                    <p class="produto-info descricao">
+                        <strong class="label-escuro">Descrição:</strong> 
+                        <span class="texto-apagado-coluna">
+                            <span>Uma Camisa ideal</span>
+                            <span>para programar por</span>
+                            <span>mais de 12 horas</span>
+                        </span>
+                    </p>
+                    <section class="produto-rodape">
+                        <span class="produto-preco">R$ 59,90</span>
+                        <span class="produto-estoque">171 disponíveis</span>
+                    </section>
+                </article>
 
-        <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 1">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
+                <article class="produto-card"><img src="img/produto1.png" alt="P2"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="img/produto1.png" alt="P3"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="img/produto1.png" alt="P4"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="img/produto1.png" alt="P5"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="img/produto1.png" alt="P6"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="img/produto1.png" alt="P7"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="img/produto1.png" alt="P8"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
 
-        <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 2">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 3">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 4">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 5">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 6">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 7">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 8">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 9">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 10">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
+                <article class="produto-card selecionado">
+                    <img src="img/produto1.png" alt="Produto">
+                    <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
+                    <p class="produto-info">
+                        <strong class="label-escuro">Fabricante:</strong> 
+                        <span class="texto-apagado">Eletiva Uniformes</span>
+                    </p>
+                    <p class="produto-info descricao">
+                        <strong class="label-escuro">Descrição:</strong> 
+                        <span class="texto-apagado-coluna">
+                            <span>Uma Camisa ideal</span>
+                            <span>para programar por</span>
+                            <span>mais de 12 horas</span>
+                        </span>
+                    </p>
+                    <section class="produto-rodape">
+                        <span class="produto-preco">R$ 59,90</span>
+                        <span class="produto-estoque">171 disponíveis</span>
+                    </section>
+                </article>
 
-        <!-- repete o produto-card para cada produto -->
+                <article class="produto-card"><img src="img/produto1.png" alt="P10"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
 
-    </section>
-</section>
+            </section>
+        </section>
     </main>
-     <footer class="footer-completo">
+    
+    <footer class="footer-completo">
         <section class="footer-container">
 
             <section class="footer-col">
@@ -204,6 +148,5 @@
             © 2023 Xhopii. Todos os direitos acadêmicos reservados
         </p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

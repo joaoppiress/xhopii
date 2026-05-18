@@ -1,36 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="redefinir.css">
-    <title>Redifinir Senha</title>
+    <link rel="stylesheet" href="../css/produto.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Xhopii</title>
 </head>
 <body>
     <header>
-        <section class ="header-index">
-            <section class="header-index-logo">   
-           <img src="img/logo.png" alt="Xhopii Logo">
-            <h1>Xhopii</h1>    
-            <span class="divisor-v"></span>
-            <p>Redefinir senha</p>         
+        <section class="cabecalho-xhopii">
+            <section class="cabecalho-xhopii-logo">   
+                <img src="img/logo.png">
+                <h1>Xhopii</h1>
             </section>
-             <nav class="header-index-ajuda">
-            <a href="#">Precisa de ajuda?</a>
-        </nav>
+            <section class="cabecalho-xhopii-sair">
+                <a href="index.php">Sair</a>
+            </section>
+        </section>
+        <section class="cabecalho-menu">
+            <nav>
+                <ul>
+                    <a href="index.php">Home</a>
+                    <a href="cad_cliente.php">Cadastro Cliente</a>
+                    <a href="cad_funcionario.php">Cadastro Funcionário</a>
+                    <a href="cad_produto.php">Cadastro Produto</a>
+                    <a href="ver_clientes.php">Ver Clientes</a>
+                    <a href="ver_funcionarios.php">Ver Funcionários</a>
+                    <a href="ver_produtos.php">Ver Produtos</a>
+                </ul>
+            </nav>
         </section>
     </header>
+  <main>
+    <section class="cadastro-produto">
+        <h2>Cadastrar Produto</h2>
+        <form>
+            <input type="text" placeholder="Nome">
+            <input type="text" placeholder="Fabricante">
+            <input type="text" placeholder="Descrição">
+            <input type="text" placeholder="Valor">
+            <input type="text" placeholder="Quantidade">
 
-    <main class="login-main">
-        <article class="login-card">
-            <h2>Redefinir senha</h2>
-            <form>
-                <input type="text" placeholder="Email" class="input-login">
-                <button type="submit" class="btn-login">ENVIAR</button>
-            </form>
-        </article>
-    </main>
-     <footer class="footer-completo">
+            <label class="foto-perfil">Selecionar foto do produto:</label>
+            <section class="input-arquivo">
+                <input type="file" id="foto" hidden>
+                <label for="foto" class="btn-arquivo">Escolher arquivo</label>
+                <span>Nenhum arquivo escolhido</span>
+            </section>
+
+            <button type="submit">CADASTRAR</button>
+        </form>
+    </section>
+</main>
+    <footer class="footer-completo">
         <section class="footer-container">
 
             <section class="footer-col">
