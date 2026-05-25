@@ -51,7 +51,9 @@ CREATE TABLE `funcionario` (
   `sobrenome` varchar(100) NOT NULL,
   `dataNascimento` date NOT NULL,
   `telefone` varchar(20) DEFAULT NULL,
+  `cargo` varchar(50) NOT NULL,
   `email` varchar(150) NOT NULL,
+  `senha` varchar(255) NOT NULL,
   `salario` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

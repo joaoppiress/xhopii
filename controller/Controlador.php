@@ -20,8 +20,18 @@ class Controlador {
         return false;
     }
 
-    public function cadastrarProduto($nome, $fabricante, $descricao, $valor) {
-        $produto = new Produto($nome, $fabricante, $descricao, $valor);
+    public function cadastrarFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario) {
+        $this->bancoDeDados->inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario);
+    }
+    public function loginFuncionario($email, $senha) {
+        $funcionario = $this->bancoDeDados->buscarFuncionarioPorEmail($email);
+        if ($funcionario && password_verify($senha, $funcionario['senha'])) {
+            return $funcionario;
+        }
+        return false;
+    }
+    public function cadastrarProduto($nome, $fabricante, $descricao, $valor, $quantidade) {
+        $produto = new Produto($nome, $fabricante, $descricao, $valor, $quantidade);
         $this->bancoDeDados->inserirProduto($produto);
     }
 
