@@ -26,7 +26,7 @@
                     <a href="cadastar_produto.php">Cadastro Produto</a>
                     <a href="#">Ver Clientes</a>
                     <a href="#">Ver Funcionários</a>
-                    <a href="#">Ver Produtos</a>
+                    <a href="visu_produtos.php">Ver Produtos</a>
                 </ul>
             </nav>
         </section>

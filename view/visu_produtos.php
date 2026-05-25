@@ -10,7 +10,7 @@
     <header>
         <section class="cabecalho-xhopii">
             <section class="cabecalho-xhopii-logo">   
-                <img src="img/logo.png">
+                <img src="../img/logo.png">
                 <h1>Xhopii</h1>
             </section>
             <section class="cabecalho-xhopii-sair">
@@ -20,9 +20,9 @@
         <section class="cabecalho-menu">
             <nav>
                 <a href="index.php">Home</a>
-                <a href="#">Cadastro Cliente</a>
-                <a href="#">Cadastro Funcionário</a>
-                <a href="#">Cadastro Produto</a>
+                <a href="cad_cliente.php">Cadastro Cliente</a>
+                <a href="cad_funcionario.php">Cadastro Funcionário</a>
+                <a href="cadastrar_produto">Cadastro Produto</a>
                 <a href="#">Ver Clientes</a>
                 <a href="#">Ver Funcionários</a>
                 <a href="#">Ver Produtos</a>
@@ -36,7 +36,7 @@
 
             <section class="produtos-grid">
                 <article class="produto-card">
-                    <img src="img/produto1.png" alt="Produto">
+                    <img src="../img/produto1.png" alt="Produto">
                     <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
                     <p class="produto-info">
                         <strong class="label-escuro">Fabricante:</strong> 
@@ -56,16 +56,16 @@
                     </section>
                 </article>
 
-                <article class="produto-card"><img src="img/produto1.png" alt="P2"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="img/produto1.png" alt="P3"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="img/produto1.png" alt="P4"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="img/produto1.png" alt="P5"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="img/produto1.png" alt="P6"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="img/produto1.png" alt="P7"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="img/produto1.png" alt="P8"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="../img/produto1.png" alt="P2"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="../img/produto1.png" alt="P3"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="../img/produto1.png" alt="P4"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="../img/produto1.png" alt="P5"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="../img/produto1.png" alt="P6"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="../img/produto1.png" alt="P7"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="../img/produto1.png" alt="P8"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
 
                 <article class="produto-card selecionado">
-                    <img src="img/produto1.png" alt="Produto">
+                    <img src="../img/produto1.png" alt="Produto">
                     <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
                     <p class="produto-info">
                         <strong class="label-escuro">Fabricante:</strong> 
@@ -85,7 +85,7 @@
                     </section>
                 </article>
 
-                <article class="produto-card"><img src="img/produto1.png" alt="P10"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+                <article class="produto-card"><img src="../img/produto1.png" alt="P10"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
 
             </section>
         </section>
