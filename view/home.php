@@ -10,7 +10,7 @@
     <header>
         <section class="cabecalho-xhopii">
             <section class="cabecalho-xhopii-logo">   
-                <img src="img/logo.png">
+                <img src="../img/logo.png">
                 <h1>Xhopii</h1>
             </section>
             <section class="cabecalho-xhopii-sair">
@@ -49,16 +49,16 @@
                 </section>
                 <section class="carousel-inner">
                     <section class="carousel-item active">
-                        <img src="img/carrossel1.png" class="d-block w-100" alt="Slide 1">
+                        <img src="../img/carrossel1.png" class="d-block w-100" alt="Slide 1">
                     </section>
                     <section class="carousel-item">
-                        <img src="img/carrossel2.png" class="d-block w-100" alt="Slide 2">
+                        <img src="../img/carrossel2.png" class="d-block w-100" alt="Slide 2">
                     </section>
                     <section class="carousel-item">
-                        <img src="img/carrossel3.png" class="d-block w-100" alt="Slide 3">
+                        <img src="../img/carrossel3.png" class="d-block w-100" alt="Slide 3">
                     </section>
                     <section class="carousel-item">
-                        <img src="img/carrossel4.png" class="d-block w-100" alt="Slide 4">
+                        <img src="../img/carrossel4.png" class="d-block w-100" alt="Slide 4">
                     </section>
                 </section>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -81,62 +81,62 @@
     <section class="produtos-grid">
 
         <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 1">
+            <img src="../img/produto1.png" alt="Produto 1">
             <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
             <p class="produto-preco">R$ 59,90</p>
             <p class="produto-estoque">171 disponíveis</p>
         </section>
 
         <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 2">
+            <img src="../img/produto1.png" alt="Produto 2">
             <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
             <p class="produto-preco">R$ 59,90</p>
             <p class="produto-estoque">171 disponíveis</p>
         </section>
         <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 3">
+            <img src="../img/produto1.png" alt="Produto 3">
             <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
             <p class="produto-preco">R$ 59,90</p>
             <p class="produto-estoque">171 disponíveis</p>
         </section>
         <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 4">
+            <img src="../img/produto1.png" alt="Produto 4">
             <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
             <p class="produto-preco">R$ 59,90</p>
             <p class="produto-estoque">171 disponíveis</p>
         </section>
         <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 5">
+            <img src="../img/produto1.png" alt="Produto 5">
             <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
             <p class="produto-preco">R$ 59,90</p>
             <p class="produto-estoque">171 disponíveis</p>
         </section>
         <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 6">
+            <img src="../img/produto1.png" alt="Produto 6">
             <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
             <p class="produto-preco">R$ 59,90</p>
             <p class="produto-estoque">171 disponíveis</p>
         </section>
         <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 7">
+            <img src="../img/produto1.png" alt="Produto 7">
             <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
             <p class="produto-preco">R$ 59,90</p>
             <p class="produto-estoque">171 disponíveis</p>
         </section>
         <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 8">
+            <img src="../img/produto1.png" alt="Produto 8">
             <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
             <p class="produto-preco">R$ 59,90</p>
             <p class="produto-estoque">171 disponíveis</p>
         </section>
         <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 9">
+            <img src="../img/produto1.png" alt="Produto 9">
             <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
             <p class="produto-preco">R$ 59,90</p>
             <p class="produto-estoque">171 disponíveis</p>
         </section>
         <section class="produto-card">
-            <img src="img/produto1.png" alt="Produto 10">
+            <img src="../img/produto1.png" alt="Produto 10">
             <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
             <p class="produto-preco">R$ 59,90</p>
             <p class="produto-estoque">171 disponíveis</p>

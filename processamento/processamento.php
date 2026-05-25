@@ -1,20 +1,27 @@
 <?php
 
 session_start();
-require "funcoesBD.php";
-require_once("../model/Produto.php");
+require_once "../model/BancoDeDados.php";
+require_once "../model/Produto.php";
+require_once "../controller/Controlador.php";
 
 $controlador = new Controlador();
 
 //Login
 if(isset($_POST['inputEmailLog']) && isset($_POST['inputSenhaLog'])){
 
-    $_SESSION['estaLogado'] = TRUE;
     $email = $_POST['inputEmailLog'];
     $senha = $_POST['inputSenhaLog'];
 
-    //echo "Email: " . $email . "Senha: " . $senha;
-    header('Location:../view/home.php');
+    $cliente = $controlador->loginCliente($email, $senha);
+
+    if($cliente){
+        $_SESSION['estaLogado'] = TRUE;
+        $_SESSION['clienteNome'] = $cliente['nome'];
+        header('Location:../view/home.php');
+    } else {
+        header('Location:../index.php?erro=1');
+    }
     die();
 }
 
@@ -32,10 +39,9 @@ if(isset($_POST['inputNome']) && isset($_POST['inputSobrenome']) &&
     $email = $_POST['inputEmail'];
     $senha = $_POST['inputSenha'];
     
-    #MODIFICAR PARA MVC CONTROLADOR
-    inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha);
+    $controlador->cadastrarCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha);
 
-    header('Location:../view/cadastroCliente.php');
+    header('Location:../view/cad_cliente.php');
     die();
 }
 

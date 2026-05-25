@@ -34,14 +34,14 @@
   <main>
     <section class="cadastro-cliente">
         <h2>Cadastrar Cliente</h2>
-        <form>
-            <input type="text" placeholder="Nome">
-            <input type="text" placeholder="Sobrenome">
-            <input type="text" placeholder="CPF">
-            <input type="date" placeholder="dd/mm/aaaa">
-            <input type="tel" placeholder="Telefone">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Senha">
+        <form action="../processamento/processamento.php" method="POST">
+     <input type="text" name="inputNome" placeholder="Nome" required>
+     <input type="text" name="inputSobrenome" placeholder="Sobrenome" required>
+     <input type="text" name="inputCPF" placeholder="CPF" required>
+     <input type="date" name="inputDataNasc" required>
+     <input type="tel" name="inputTelefone" placeholder="Telefone" required>
+     <input type="email" name="inputEmail" placeholder="Email" required>
+     <input type="password" name="inputSenha" placeholder="Senha" required>
 
             <label class="foto-perfil">Selecionar foto de perfil:</label>
             <section class="input-arquivo">

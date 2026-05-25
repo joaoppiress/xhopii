@@ -16,21 +16,27 @@ class BancoDeDados{
 
     //Métodos
     public function conectarBD(){
-
         $conexao = mysqli_connect($this->host,$this->login,$this->senha,$this->dataBase);
         return($conexao);
     }
     
     public function inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha){
-        
         $conexao = $this->conectarBD();
-        $consulta = "INSERT INTO cliente (cpf, nome, sobrenome, dataNascimento, telefone, email, senha) 
-                     VALUES ('$cpf','$nome','$sobrenome','$dataNasc','$telefone','$email','$senha')";
-        mysqli_query($conexao,$consulta);
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+        $stmt = mysqli_prepare($conexao, "INSERT INTO cliente (cpf, nome, sobrenome, dataNascimento, telefone, email, senha) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        mysqli_stmt_bind_param($stmt, "sssssss", $cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senhaHash);
+        mysqli_stmt_execute($stmt);
+    }
+
+    public function buscarClientePorEmail($email){
+        $conexao = $this->conectarBD();
+        $stmt = mysqli_prepare($conexao, "SELECT * FROM cliente WHERE email = ?");
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        return mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
     }
     
     public function inserirProduto($produto){
-        
         $conexao = $this->conectarBD();
         $consulta = "INSERT INTO produto (nome, fabricante, descricao, valor) 
                      VALUES ('$produto->get_Nome()',
@@ -41,7 +47,6 @@ class BancoDeDados{
     }
     
     public function inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $salario){
-        
         $conexao = $this->conectarBD();
         $consulta = "INSERT INTO funcionario (cpf, nome, sobrenome, dataNascimento, telefone, email, salario) 
                      VALUES ('$cpf','$nome','$sobrenome','$dataNasc','$telefone','$email','$salario')";
@@ -49,7 +54,6 @@ class BancoDeDados{
     }
     
     public function retornarClientes(){
-    
         $conexao = $this->conectarBD();
         $consulta = "SELECT * FROM cliente";
         $listaClientes = mysqli_query($conexao,$consulta);

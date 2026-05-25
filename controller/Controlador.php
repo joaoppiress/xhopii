@@ -1,31 +1,28 @@
 <?php
 
-class Controlador{
+class Controlador {
 
-    //Atributo
     private $bancoDeDados;
 
-    function __construct(){
-        $this->bancoDeDados = new BancoDeDados("localhost","root","","xhopii");
+    function __construct() {
+        $this->bancoDeDados = new BancoDeDados("localhost", "root", "", "xhopii");
     }
 
-    public function cadastrarProduto($nome, $fabricante, $descricao, $valor){
-
-        $produto = new Produto($nome,$fabricante,$descricao,$valor);
-        $this->bancoDeDados->inserirProduto($produto);
+    public function cadastrarCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha) {
+        $this->bancoDeDados->inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha);
     }
 
-    public function visualizarProdutos(){
-        
-        $listaProdutos = $this->bancoDeDados->retornarProdutos();
-        while($produto = mysqli_fetch_assoc($listaProdutos)){
-            return "<section class=\"conteudo-bloco\">" .
-                   "<h2>" . $produto["nome"] . "</h2>" .
-                   "<p>Fabricante: " . $produto["fabricante"] . "</p>" .
-                   "<p>Descrição: " . $produto["descricao"] . "</p>" . 
-                   "<p>Valor: " . $produto["valor"] . "</p>" .
-                   "</section>";
+    public function loginCliente($email, $senha) {
+        $cliente = $this->bancoDeDados->buscarClientePorEmail($email);
+        if ($cliente && password_verify($senha, $cliente['senha'])) {
+            return $cliente;
         }
+        return false;
+    }
+
+    public function cadastrarProduto($nome, $fabricante, $descricao, $valor) {
+        $produto = new Produto($nome, $fabricante, $descricao, $valor);
+        $this->bancoDeDados->inserirProduto($produto);
     }
 
 }

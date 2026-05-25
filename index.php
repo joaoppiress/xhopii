@@ -22,9 +22,9 @@
     <main class="login-main">
         <article class="login-card">
             <h2>Login</h2>
-            <form>
-                <input type="text" placeholder="Email" class="input-login">
-                <input type="password" placeholder="Senha" class="input-login">
+            <form action="processamento/processamento.php" method="POST">
+                <input type="email" name="inputEmailLog" placeholder="Email" class="input-login" required>
+                <input type="password" name="inputSenhaLog" placeholder="Senha" class="input-login" required>
                 <button type="submit" class="btn-login">ENTRE</button>
             </form>
     
