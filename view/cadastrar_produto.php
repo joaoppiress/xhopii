@@ -10,7 +10,7 @@
     <header>
         <section class="cabecalho-xhopii">
             <section class="cabecalho-xhopii-logo">   
-                <img src="img/logo.png">
+                <img src="../img/logo.png">
                 <h1>Xhopii</h1>
             </section>
             <section class="cabecalho-xhopii-sair">
@@ -23,7 +23,7 @@
                     <a href="index.php">Home</a>
                     <a href="cad_cliente.php">Cadastro Cliente</a>
                     <a href="cad_funcionario.php">Cadastro Funcionário</a>
-                    <a href="cad_produto.php">Cadastro Produto</a>
+                    <a href="cadastrar_produto.php">Cadastro Produto</a>
                     <a href="ver_clientes.php">Ver Clientes</a>
                     <a href="ver_funcionarios.php">Ver Funcionários</a>
                     <a href="ver_produtos.php">Ver Produtos</a>
