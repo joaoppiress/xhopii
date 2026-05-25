@@ -34,12 +34,12 @@
   <main>
     <section class="cadastro-produto">
         <h2>Cadastrar Produto</h2>
-        <form>
-            <input type="text" placeholder="Nome">
-            <input type="text" placeholder="Fabricante">
-            <input type="text" placeholder="Descrição">
-            <input type="text" placeholder="Valor">
-            <input type="text" placeholder="Quantidade">
+        <form action="../processamento/processamento.php" method="POST">
+            <input type="text" name="inputNomeProd" placeholder="Nome" required>
+            <input type="text" name="inputFabricanteProd" placeholder="Fabricante" required>
+            <input type="text" name="inputDescricaoProd"placeholder="Descrição" required>
+            <input type="text" name="inputValorProd"placeholder="Valor" required>
+            <input type="text" name="inputQuantProd"placeholder="Quantidade" required>
 
             <label class="foto-perfil">Selecionar foto do produto:</label>
             <section class="input-arquivo">
@@ -49,7 +49,7 @@
             </section>
 
             <button type="submit">CADASTRAR</button>
-        </form>
+</form>
     </section>
 </main>
     <footer class="footer-completo">
