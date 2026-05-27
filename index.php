@@ -15,7 +15,7 @@
             <p>Entre</p>
         </section>
         <nav class="header-index-ajuda">
-            <a href="#">Precisa de ajuda?</a>
+            <a href="view/home.php">Precisa de ajuda?</a>
         </nav>
     </header>
     

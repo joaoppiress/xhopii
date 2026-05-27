@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/cad_cliente.css">
+    <link rel="stylesheet" href="../css/cad_loja.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title>Xhopii</title>
 </head>
@@ -33,7 +33,7 @@
         </section>
     </header>
   <main>
-    <section class="cadastro-cliente">
+    <section class="cadastro-loja">
         <h2>Cadastrar Cliente</h2>
         <form action="../processamento/processamento.php" method="POST">
      <input type="text" name="inputNome" placeholder="Nome" required>
