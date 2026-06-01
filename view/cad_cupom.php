@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/cad_funcionario.css">
+    <link rel="stylesheet" href="../css/cad_cupom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title>Xhopii</title>
 </head>
@@ -14,17 +14,18 @@
                 <h1>Xhopii</h1>
             </section>
             <section class="cabecalho-xhopii-sair">
-                <a href="login.php">Sair</a>
+                <a href="index.php">Sair</a>
             </section>
         </section>
         <section class="cabecalho-menu">
             <nav>
                 <ul>
-                    <a href="../index.php">Home</a>
+                    <a href="home.php">Home</a>
                     <a href="cad_cliente.php">Cadastro Cliente</a>
                     <a href="cad_funcionario.php">Cadastro Funcionário</a>
                     <a href="cadastrar_produto.php">Cadastro Produto</a>
                     <a href="cad_cupom.php">Cadastro Cupom</a>
+                    <a href="cad_loja.php">Cadastro Loja</a>
                     <a href="ver_clientes.php">Ver Clientes</a>
                     <a href="ver_funcionarios.php">Ver Funcionários</a>
                     <a href="ver_produtos.php">Ver Produtos</a>
@@ -33,18 +34,16 @@
         </section>
     </header>
   <main>
-    <section class="cadastro-funcionario">
-        <h2>Cadastrar Funcionário</h2>
+    <section class="cadastro-cupom">
+        <h2>Cadastrar cupom</h2>
         <form action="../processamento/processamento.php" method="POST">
-            <input type="text" name="inputNomeFunc" placeholder="Nome" required>
-            <input type="text" name="inputSobrenomeFunc" placeholder="Sobrenome" required>
-            <input type="text" name="inputCPFFunc" placeholder="CPF" required>
-            <input type="date" name="inputDataNascFunc" placeholder="dd/mm/aaaa" required>
-            <input type="tel" name="inputTelefoneFunc" placeholder="Telefone" required>
-            <input type="text" name="inputCargoFunc" placeholder="Cargo/Função" required>
-            <input type="number" name="inputSalarioFunc" placeholder="Salário" min="0" step="0.01" required>
-            <input type="email" name="inputEmailFunc" placeholder="Email" required>
-            <input type="password" name="inputSenhaFunc" placeholder="Senha" required>
+     <input type="text" name="inputNome" placeholder="Nome" required>
+     <input type="text" name="inputSobrenome" placeholder="Sobrenome" required>
+     <input type="text" name="inputCPF" placeholder="CPF" required>
+     <input type="date" name="inputDataNasc" required>
+     <input type="tel" name="inputTelefone" placeholder="Telefone" required>
+     <input type="email" name="inputEmail" placeholder="Email" required>
+     <input type="password" name="inputSenha" placeholder="Senha" required>
 
             <label class="foto-perfil">Selecionar foto de perfil:</label>
             <section class="input-arquivo">

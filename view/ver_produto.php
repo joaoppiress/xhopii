@@ -18,10 +18,9 @@
             <nav>
                 <ul>
                     <a href="home.php">Home</a>
-                    <a href="cad_cliente.php">Cadastro Cliente</a>
-                    <a href="cad_funcionario.php">Cadastro Funcionário</a>
-                    <a href="cadastrar_produto.php">Cadastro Produto</a>
-                    <a href="cad_loja.php">Cadastro Loja</a>
+                    <a href="#">Cadastro Cliente</a>
+                    <a href="#">Cadastro Funcionário</a>
+                    <a href="#">Cadastro Produto</a>
                     <a href="#">Ver Clientes</a>
                     <a href="#">Ver Funcionários</a>
                     <a href="#">Ver Produtos</a>
