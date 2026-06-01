@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/produto.css">
+    <link rel="stylesheet" href="../css/cad_cupom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title>Xhopii</title>
 </head>
@@ -20,11 +20,12 @@
         <section class="cabecalho-menu">
             <nav>
                 <ul>
-                    <a href="index.php">Home</a>
+                    <a href="home.php">Home</a>
                     <a href="cad_cliente.php">Cadastro Cliente</a>
                     <a href="cad_funcionario.php">Cadastro Funcionário</a>
                     <a href="cadastrar_produto.php">Cadastro Produto</a>
                     <a href="cad_cupom.php">Cadastro Cupom</a>
+                    <a href="cad_loja.php">Cadastro Loja</a>
                     <a href="ver_clientes.php">Ver Clientes</a>
                     <a href="ver_funcionarios.php">Ver Funcionários</a>
                     <a href="ver_produtos.php">Ver Produtos</a>
@@ -33,16 +34,18 @@
         </section>
     </header>
   <main>
-    <section class="cadastro-produto">
-        <h2>Cadastrar Produto</h2>
+    <section class="cadastro-cupom">
+        <h2>Cadastrar cupom</h2>
         <form action="../processamento/processamento.php" method="POST">
-            <input type="text" name="inputNomeProd" placeholder="Nome" required>
-            <input type="text" name="inputFabricanteProd" placeholder="Fabricante" required>
-            <input type="text" name="inputDescricaoProd"placeholder="Descrição" required>
-            <input type="text" name="inputValorProd"placeholder="Valor" required>
-            <input type="text" name="inputQuantProd"placeholder="Quantidade" required>
+     <input type="text" name="inputNome" placeholder="Nome" required>
+     <input type="text" name="inputSobrenome" placeholder="Sobrenome" required>
+     <input type="text" name="inputCPF" placeholder="CPF" required>
+     <input type="date" name="inputDataNasc" required>
+     <input type="tel" name="inputTelefone" placeholder="Telefone" required>
+     <input type="email" name="inputEmail" placeholder="Email" required>
+     <input type="password" name="inputSenha" placeholder="Senha" required>
 
-            <label class="foto-perfil">Selecionar foto do produto:</label>
+            <label class="foto-perfil">Selecionar foto de perfil:</label>
             <section class="input-arquivo">
                 <input type="file" id="foto" hidden>
                 <label for="foto" class="btn-arquivo">Escolher arquivo</label>
@@ -50,10 +53,10 @@
             </section>
 
             <button type="submit">CADASTRAR</button>
-</form>
+        </form>
     </section>
 </main>
-    <footer class="footer-completo">
+     <footer class="footer-completo">
         <section class="footer-container">
 
             <section class="footer-col">

@@ -21,6 +21,7 @@
                     <a href="#">Cadastro Cliente</a>
                     <a href="#">Cadastro Funcionário</a>
                     <a href="#">Cadastro Produto</a>
+                    <a href="cad_cupom.php">Cadastro Cupom</a>
                     <a href="#">Ver Clientes</a>
                     <a href="#">Ver Funcionários</a>
                     <a href="#">Ver Produtos</a>
