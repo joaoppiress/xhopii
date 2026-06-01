@@ -10,7 +10,7 @@
     <header>
         <section class ="cabecalho-xhopii">
             <section class="cabecalho-xhopii-logo">   
-            <img src="img/logo.png">
+            <img src="../img/logo.png">
             <h1>Xhopii</h1>
             </section>
         </section>
@@ -18,9 +18,10 @@
             <nav>
                 <ul>
                     <a href="home.php">Home</a>
-                    <a href="#">Cadastro Cliente</a>
-                    <a href="#">Cadastro Funcionário</a>
-                    <a href="#">Cadastro Produto</a>
+                    <a href="cad_cliente.php">Cadastro Cliente</a>
+                    <a href="cad_funcionario.php">Cadastro Funcionário</a>
+                    <a href="cadastrar_produto.php">Cadastro Produto</a>
+                    <a href="cad_loja.php">Cadastro Loja</a>
                     <a href="#">Ver Clientes</a>
                     <a href="#">Ver Funcionários</a>
                     <a href="#">Ver Produtos</a>
@@ -33,27 +34,27 @@
         <section class="conteudo-imagens">
             <label class="btn-camisa">
                 <input type="radio" name="camisa" value="preto">
-                <img src="img/produto1.png">
+                <img src="../img/produto1.png">
             </label>
             <label class="btn-camisa">
                 <input type="radio" name="camisa" value="preto">
-                <img src="img/produto2.png">
+                <img src="../img/produto2.png">
             </label>
             <label class="btn-camisa">
                 <input type="radio" name="camisa" value="preto">
-                <img src="img/produto3.png">
+                <img src="../img/produto3.png">
             </label>
             <label class="btn-camisa">
                 <input type="radio" name="camisa" value="preto">
-                <img src="img/produto4.png">
+                <img src="../img/produto4.png">
             </label>
             <label class="btn-camisa">
                 <input type="radio" name="camisa" value="preto">
-                <img src="img/produto5.png">
+                <img src="../img/produto5.png">
             </label>
         </section>
             <section class="conteudo-imagem">
-                <img src="img/produto1.png">
+                <img src="../img/produto1.png">
             </section>
     </section>
     <section class="especificacao">

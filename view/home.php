@@ -14,7 +14,7 @@
                 <h1>Xhopii</h1>
             </section>
             <section class="cabecalho-xhopii-sair">
-                <a href="index.php">Sair</a>
+                <a href="login.php">Sair</a>
             </section>
         </section>
         <section class="cabecalho-menu">

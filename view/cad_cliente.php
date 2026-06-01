@@ -14,7 +14,7 @@
                 <h1>Xhopii</h1>
             </section>
             <section class="cabecalho-xhopii-sair">
-                <a href="index.php">Sair</a>
+                <a href="login.php">Sair</a>
             </section>
         </section>
         <section class="cabecalho-menu">
@@ -27,7 +27,7 @@
                     <a href="cad_loja.php">Cadastro Loja</a>
                     <a href="ver_clientes.php">Ver Clientes</a>
                     <a href="ver_funcionarios.php">Ver Funcionários</a>
-                    <a href="ver_produtos.php">Ver Produtos</a>
+                    <a href="ver_produto.php">Ver Produtos</a>
                 </ul>
             </nav>
         </section>

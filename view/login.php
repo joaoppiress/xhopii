@@ -1,94 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/visu_produtos.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <title>Xhopii</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Index</title>
 </head>
-<body>
-    <header>
-        <section class="cabecalho-xhopii">
-            <section class="cabecalho-xhopii-logo">   
-                <img src="../img/logo.png">
-                <h1>Xhopii</h1>
-            </section>
-            <section class="cabecalho-xhopii-sair">
-                <a href="index.php">Sair</a>
-            </section>
+<body class="body-index">
+    <header class="header-index">
+        <section class="header-index-logo">
+            <img src="../img/logo.png" alt="Xhopii Logo">
+            <h1>Xhopii</h1>
+            <span class="divisor-v"></span>
+            <p>Entre</p>
         </section>
-        <section class="cabecalho-menu">
-            <nav>
-                <a href="index.php">Home</a>
-                <a href="cad_cliente.php">Cadastro Cliente</a>
-                <a href="cad_funcionario.php">Cadastro Funcionário</a>
-                <a href="cadastrar_produto">Cadastro Produto</a>
-                <a href="#">Ver Clientes</a>
-                <a href="#">Ver Funcionários</a>
-                <a href="ver_produto.php">Ver Produtos</a>
+        <nav class="header-index-ajuda">
+            <a href="view/home.php">Precisa de ajuda?</a>
+        </nav>
+    </header>
+    
+    <main class="login-main">
+        <article class="login-card">
+            <h2>Login</h2>
+            <form action="../processamento/processamento.php" method="POST">
+                <input type="email" name="inputEmailLog" placeholder="Email" class="input-login" required>
+                <input type="password" name="inputSenhaLog" placeholder="Senha" class="input-login" required>
+                <button type="submit" class="btn-login">ENTRE</button>
+            </form>
+    
+            <nav class="login-links">
+                <a href="#">Esqueci minha senha</a>
+                <a href="#">Fazer login com SMS</a>
             </nav>
-        </section>
-    </header>        
-
-    <main>
-        <section class="conteudo-produtos">
-            <h2 class="produtos-titulo">PRODUTOS</h2>
-
-            <section class="produtos-grid">
-                <article class="produto-card">
-                    <img src="../img/produto1.png" alt="Produto">
-                    <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-                    <p class="produto-info">
-                        <strong class="label-escuro">Fabricante:</strong> 
-                        <span class="texto-apagado">Eletiva Uniformes</span>
-                    </p>
-                    <p class="produto-info descricao">
-                        <strong class="label-escuro">Descrição:</strong> 
-                        <span class="texto-apagado-coluna">
-                            <span>Uma Camisa ideal</span>
-                            <span>para programar por</span>
-                            <span>mais de 12 horas</span>
-                        </span>
-                    </p>
-                    <section class="produto-rodape">
-                        <span class="produto-preco">R$ 59,90</span>
-                        <span class="produto-estoque">171 disponíveis</span>
-                    </section>
-                </article>
-
-                <article class="produto-card"><img src="../img/produto1.png" alt="P2"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P3"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P4"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P5"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P6"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P7"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P8"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-
-                <article class="produto-card selecionado">
-                    <img src="../img/produto1.png" alt="Produto">
-                    <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-                    <p class="produto-info">
-                        <strong class="label-escuro">Fabricante:</strong> 
-                        <span class="texto-apagado">Eletiva Uniformes</span>
-                    </p>
-                    <p class="produto-info descricao">
-                        <strong class="label-escuro">Descrição:</strong> 
-                        <span class="texto-apagado-coluna">
-                            <span>Uma Camisa ideal</span>
-                            <span>para programar por</span>
-                            <span>mais de 12 horas</span>
-                        </span>
-                    </p>
-                    <section class="produto-rodape">
-                        <span class="produto-preco">R$ 59,90</span>
-                        <span class="produto-estoque">171 disponíveis</span>
-                    </section>
-                </article>
-
-                <article class="produto-card"><img src="../img/produto1.png" alt="P10"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-
-            </section>
-        </section>
+    
+            <div class="divisor-ou">
+                <span>OU</span>
+            </div>
+    
+            <nav class="social-area">
+                <button class="btn-social"><img src="../img/facebook.png">Facebook</button>
+                <button class="btn-social"><img src="../img/google.png">Google</button>
+                <button class="btn-social"><img src="../img/apple.png">Apple</button>
+            </nav>
+    
+            <p class="txt-cadastrar">Novo na Xhopii? <a href="view/cad_cliente.php">Cadastrar</a></p>
+        </article>
     </main>
     
     <footer class="footer-completo">
@@ -148,5 +104,5 @@
             © 2023 Xhopii. Todos os direitos acadêmicos reservados
         </p>
     </footer>
-</body>
-</html>
+    </body>
+    </html>
