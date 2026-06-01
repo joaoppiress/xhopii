@@ -43,7 +43,7 @@
                 <button class="btn-social"><img src="../img/apple.png">Apple</button>
             </nav>
     
-            <p class="txt-cadastrar">Novo na Xhopii? <a href="view/cad_cliente.php">Cadastrar</a></p>
+            <p class="txt-cadastrar">Novo na Xhopii? <a href="../view/cad_cliente.php">Cadastrar</a></p>
         </article>
     </main>
     
