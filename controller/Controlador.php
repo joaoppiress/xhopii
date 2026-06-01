@@ -3,6 +3,8 @@
 require_once __DIR__ . "/../model/BancoDeDados.php";
 require_once __DIR__ . "/../model/Produto.php";
 require_once __DIR__ . "/../model/Cupom.php";
+require_once __DIR__ . "/../model/Funcionario.php";
+require_once __DIR__ . "/../model/Loja.php";
 
 class Controlador {
 
@@ -30,15 +32,6 @@ class Controlador {
         $this->bancoDeDados->inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario);
     }
 
-    public function loginFuncionario($email, $senha) {
-        $funcionario = $this->bancoDeDados->buscarFuncionarioPorEmail($email);
-
-        if ($funcionario && password_verify($senha, $funcionario['senha'])) {
-            return $funcionario;
-        }
-
-        return false;
-    }
 
     public function cadastrarProduto($nome, $fabricante, $descricao, $valor, $quantidade) {
 
@@ -62,6 +55,19 @@ class Controlador {
         );
 
         $this->bancoDeDados->inserirCupom($cupom);
+    }
+    public function cadastrarLoja($nome, $descricao, $telefone, $email, $senha, $cidade){
+
+        $loja = new Loja(
+             $nome,
+             $descricao,
+             $telefone,
+             $email,
+             $senha,
+             $cidade,
+        );
+
+        $this->bancoDeDados->inserirLoja($loja);
     }
 
 }

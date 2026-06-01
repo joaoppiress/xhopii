@@ -5,6 +5,8 @@ require_once __DIR__ . "/../model/BancoDeDados.php";
 require_once __DIR__ . "/../model/Produto.php";
 require_once __DIR__ . "/../controller/Controlador.php";
 require_once __DIR__ . "/../model/Cupom.php";
+require_once __DIR__ . "/../model/Funcionario.php";
+require_once __DIR__ . "/../model/Loja.php";
 
 $controlador = new Controlador();
 
@@ -118,7 +120,6 @@ if (
 
         header('Location:../view/cadastrar_produto.php?cadastro=sucesso');
     } catch (Throwable $erro) {
-        // Debug temporario: remover apos validar o cadastro no ambiente local.
         error_log('[DEBUG cadastro produto] ' . $erro->getMessage());
         header('Location:../view/cadastrar_produto.php?erro=cadastro');
     }
@@ -151,4 +152,32 @@ if(
     die();
 }
 
+if(
+    isset($_POST['inputNomeLoja']) &&
+    isset($_POST['inputDescricaoLoja']) &&
+    isset($_POST['inputTelefoneLoja']) &&
+    isset($_POST['inputEmailLoja']) &&
+    isset($_POST['inputSenhaLoja']) &&
+    isset($_POST['inputCidadeLoja'])
+){
+
+    $nome = trim($_POST['inputNomeLoja']);
+    $descricao = trim($_POST['inputDescricaoLoja']);
+    $telefone = trim($_POST['inputTelefoneLoja']);
+    $email = trim($_POST['inputEmailLoja']);
+    $senha = $_POST['inputSenhaLoja'];
+    $cidade = trim($_POST['inputCidadeLoja']);
+
+    $controlador->cadastrarLoja(
+        $nome,
+        $descricao,
+        $telefone,
+        $email,
+        $senha,
+        $cidade
+    );
+
+    header('Location:../view/cad_loja.php?cadastro=sucesso');
+    die();
+}
 ?>

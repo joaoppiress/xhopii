@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Maio-2026 às 18:57
+-- Tempo de geração: 01-Jun-2026 às 20:47
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -38,6 +38,33 @@ CREATE TABLE `cliente` (
   `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`id`, `cpf`, `nome`, `sobrenome`, `dataNascimento`, `telefone`, `email`, `senha`) VALUES
+(1, '123456789012', 'João', 'Silva', '1999-06-10', '18 996312982', 'joao@xhopii.com', '$2y$10$nJqP03vk41zOhxs.tubP6OmD8lv1NFALvgFvZ4WB54mOsGK3g7pBu');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cupom`
+--
+
+CREATE TABLE `cupom` (
+  `id` int(11) NOT NULL,
+  `codigo` varchar(50) NOT NULL,
+  `desconto` decimal(10,2) NOT NULL,
+  `validade` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `cupom`
+--
+
+INSERT INTO `cupom` (`id`, `codigo`, `desconto`, `validade`) VALUES
+(1, '1', '2.00', '2027-02-12');
+
 -- --------------------------------------------------------
 
 --
@@ -57,6 +84,37 @@ CREATE TABLE `funcionario` (
   `salario` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`id`, `cpf`, `nome`, `sobrenome`, `dataNascimento`, `telefone`, `cargo`, `email`, `senha`, `salario`) VALUES
+(1, '123432121', 'José', 'Santos', '1990-03-12', '12356543', 'Gerente', 'jose@xhopii.com', '$2y$10$5uoj1d0BtP2rd7nNtZ9Kl.6WWLw55clkrViIIvdM4dDNrJdGl9pSq', '10000.00');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `loja`
+--
+
+CREATE TABLE `loja` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
+  `telefone` varchar(20) DEFAULT NULL,
+  `email` varchar(150) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+  `dataCadastro` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `loja`
+--
+
+INSERT INTO `loja` (`id`, `nome`, `descricao`, `telefone`, `email`, `senha`, `cidade`, `dataCadastro`) VALUES
+(1, 'Xhopii Prudente', 'Xhopii de Presidente Prudente', '1234567895', 'xprudente@xhopii.com', '$2y$10$db3PWMH5oH4h/Nwjyfjt5OBUJVva2Z0tu5Q64tsk1ZO16iEJOxeUi', 'Presidente Prudente', '2026-06-01 15:42:30');
+
 -- --------------------------------------------------------
 
 --
@@ -68,7 +126,8 @@ CREATE TABLE `produto` (
   `nome` varchar(150) NOT NULL,
   `fabricante` varchar(100) NOT NULL,
   `descricao` text DEFAULT NULL,
-  `valor` decimal(10,2) NOT NULL
+  `valor` decimal(10,2) NOT NULL,
+  `imagem` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -84,11 +143,24 @@ ALTER TABLE `cliente`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Índices para tabela `cupom`
+--
+ALTER TABLE `cupom`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `funcionario`
 --
 ALTER TABLE `funcionario`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `cpf` (`cpf`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Índices para tabela `loja`
+--
+ALTER TABLE `loja`
+  ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
@@ -105,13 +177,25 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `cupom`
+--
+ALTER TABLE `cupom`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `loja`
+--
+ALTER TABLE `loja`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `produto`

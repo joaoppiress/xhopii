@@ -35,25 +35,23 @@
     </header>
   <main>
     <section class="cadastro-loja">
-        <h2>Cadastrar Cliente</h2>
-        <form action="../processamento/processamento.php" method="POST">
-     <input type="text" name="inputNome" placeholder="Nome" required>
-     <input type="text" name="inputSobrenome" placeholder="Sobrenome" required>
-     <input type="text" name="inputCPF" placeholder="CPF" required>
-     <input type="date" name="inputDataNasc" required>
-     <input type="tel" name="inputTelefone" placeholder="Telefone" required>
-     <input type="email" name="inputEmail" placeholder="Email" required>
-     <input type="password" name="inputSenha" placeholder="Senha" required>
+    <h2>Cadastrar Loja</h2>
 
-            <label class="foto-perfil">Selecionar foto de perfil:</label>
-            <section class="input-arquivo">
-                <input type="file" id="foto" hidden>
-                <label for="foto" class="btn-arquivo">Escolher arquivo</label>
-                <span>Nenhum arquivo escolhido</span>
-            </section>
-
-            <button type="submit">CADASTRAR</button>
-        </form>
+<form action="../processamento/processamento.php" method="POST">
+        <input type="text" name="inputNomeLoja" placeholder="Nome da Loja" required>
+        <input type="text" name="inputDescricaoLoja" placeholder="Descrição da Loja" required>
+        <input type="tel" name="inputTelefoneLoja" placeholder="Telefone" required>
+        <input type="email" name="inputEmailLoja" placeholder="Email" required>
+        <input type="password" name="inputSenhaLoja" placeholder="Senha" required>
+        <input type="text" name="inputCidadeLoja" placeholder="Cidade" required>
+    <label class="foto-perfil">Selecionar logo da loja:</label>
+    <section class="input-arquivo">
+        <input type="file" id="logoLoja" hidden>
+        <label for="logoLoja" class="btn-arquivo">Escolher arquivo</label>
+        <span>Nenhum arquivo escolhido</span>
+    </section>
+    <button type="submit">CADASTRAR LOJA</button>
+</form>
     </section>
 </main>
      <footer class="footer-completo">

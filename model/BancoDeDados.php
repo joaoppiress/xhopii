@@ -14,7 +14,6 @@ class BancoDeDados{
         $this->dataBase = $DataBase;
     }
 
-    //Métodos
     public function conectarBD(){
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         $conexao = mysqli_connect($this->host,$this->login,$this->senha,$this->dataBase);
@@ -130,6 +129,41 @@ class BancoDeDados{
     
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
+    }
+
+    public function inserirLoja($loja){
+
+        $conexao = $this->conectarBD();
+    
+        $nome = $loja->getNome();
+        $descricao = $loja->getDescricao();
+        $telefone = $loja->getTelefone();
+        $email = $loja->getEmail();
+    
+        $senha = password_hash($loja->getSenha(), PASSWORD_DEFAULT);
+    
+        $cidade = $loja->getCidade();
+    
+        $stmt = mysqli_prepare(
+            $conexao,
+            "INSERT INTO loja (nome, descricao, telefone, email, senha, cidade)
+             VALUES (?, ?, ?, ?, ?, ?)"
+        );
+    
+        mysqli_stmt_bind_param(
+            $stmt,
+            "ssssss",
+            $nome,
+            $descricao,
+            $telefone,
+            $email,
+            $senha,
+            $cidade
+        );
+    
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+        mysqli_close($conexao);
     }
     
     }
