@@ -1,63 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/cad_funcionario.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <title>Xhopii</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Index</title>
 </head>
-<body>
-    <header>
-        <section class="cabecalho-xhopii">
-            <section class="cabecalho-xhopii-logo">   
-                <img src="../img/logo.png">
-                <h1>Xhopii</h1>
-            </section>
-            <section class="cabecalho-xhopii-sair">
-                <a href="login.php">Sair</a>
-            </section>
+<body class="body-index">
+    <header class="header-index">
+        <section class="header-index-logo">
+            <img src="../img/logo.png" alt="Xhopii Logo">
+            <h1>Xhopii</h1>
+            <span class="divisor-v"></span>
+            <p>Entre</p>
         </section>
-        <section class="cabecalho-menu">
-            <nav>
-                <ul>
-                    <a href="../index.php">Home</a>
-                    <a href="cad_cliente.php">Cadastro Cliente</a>
-                    <a href="cad_funcionario.php">Cadastro Funcionário</a>
-                    <a href="cadastrar_produto.php">Cadastro Produto</a>
-                    <a href="cad_cupom.php">Cadastro Cupom</a>
-                    <a href="ver_clientes.php">Ver Clientes</a>
-                    <a href="ver_funcionarios.php">Ver Funcionários</a>
-                    <a href="ver_produtos.php">Ver Produtos</a>
-                </ul>
-            </nav>
-        </section>
+        <nav class="header-index-ajuda">
+            <a href="view/home.php">Precisa de ajuda?</a>
+        </nav>
     </header>
-  <main>
-    <section class="cadastro-funcionario">
-        <h2>Cadastrar Funcionário</h2>
-        <form action="../processamento/processamento.php" method="POST">
-            <input type="text" name="inputNomeFunc" placeholder="Nome" required>
-            <input type="text" name="inputSobrenomeFunc" placeholder="Sobrenome" required>
-            <input type="text" name="inputCPFFunc" placeholder="CPF" required>
-            <input type="date" name="inputDataNascFunc" placeholder="dd/mm/aaaa" required>
-            <input type="tel" name="inputTelefoneFunc" placeholder="Telefone" required>
-            <input type="text" name="inputCargoFunc" placeholder="Cargo/Função" required>
-            <input type="number" name="inputSalarioFunc" placeholder="Salário" min="0" step="0.01" required>
-            <input type="email" name="inputEmailFunc" placeholder="Email" required>
-            <input type="password" name="inputSenhaFunc" placeholder="Senha" required>
-
-            <label class="foto-perfil">Selecionar foto de perfil:</label>
-            <section class="input-arquivo">
-                <input type="file" id="foto" hidden>
-                <label for="foto" class="btn-arquivo">Escolher arquivo</label>
-                <span>Nenhum arquivo escolhido</span>
-            </section>
-
-            <button type="submit">CADASTRAR</button>
-        </form>
-    </section>
-</main>
-     <footer class="footer-completo">
+    
+    <main class="login-main">
+        <article class="login-card">
+            <h2>Login</h2>
+            <form action="../processamento/processamento.php" method="POST">
+                <input type="email" name="inputEmailLog" placeholder="Email" class="input-login" required>
+                <input type="password" name="inputSenhaLog" placeholder="Senha" class="input-login" required>
+                <button type="submit" class="btn-login">ENTRE</button>
+            </form>
+    
+            <nav class="login-links">
+                <a href="#">Esqueci minha senha</a>
+                <a href="#">Fazer login com SMS</a>
+            </nav>
+    
+            <div class="divisor-ou">
+                <span>OU</span>
+            </div>
+    
+            <nav class="social-area">
+                <button class="btn-social"><img src="../img/facebook.png">Facebook</button>
+                <button class="btn-social"><img src="../img/google.png">Google</button>
+                <button class="btn-social"><img src="../img/apple.png">Apple</button>
+            </nav>
+    
+            <p class="txt-cadastrar">Novo na Xhopii? <a href="view/cad_cliente.php">Cadastrar</a></p>
+        </article>
+    </main>
+    
+    <footer class="footer-completo">
         <section class="footer-container">
 
             <section class="footer-col">
@@ -114,5 +104,5 @@
             © 2023 Xhopii. Todos os direitos acadêmicos reservados
         </p>
     </footer>
-</body>
-</html>
+    </body>
+    </html>
