@@ -4,6 +4,7 @@ session_start();
 require_once __DIR__ . "/../model/BancoDeDados.php";
 require_once __DIR__ . "/../model/Produto.php";
 require_once __DIR__ . "/../controller/Controlador.php";
+require_once __DIR__ . "/../model/Cupom.php";
 
 $controlador = new Controlador();
 
@@ -128,4 +129,26 @@ if (
 if(!empty($_POST['produtoselecionado'])){
     
 }
+
+//Cadastro de Cupom
+if(
+    isset($_POST['inputCodigoCupom']) &&
+    isset($_POST['inputDescontoCupom']) &&
+    isset($_POST['inputValidadeCupom'])
+){
+
+    $codigo = trim($_POST['inputCodigoCupom']);
+    $desconto = trim($_POST['inputDescontoCupom']);
+    $validade = trim($_POST['inputValidadeCupom']);
+
+    $controlador->cadastrarCupom(
+        $codigo,
+        $desconto,
+        $validade
+    );
+
+    header('Location:../view/cad_cupom.php?cadastro=sucesso');
+    die();
+}
+
 ?>

@@ -37,23 +37,33 @@
     <section class="cadastro-cupom">
         <h2>Cadastrar cupom</h2>
         <form action="../processamento/processamento.php" method="POST">
-     <input type="text" name="inputNome" placeholder="Nome" required>
-     <input type="text" name="inputSobrenome" placeholder="Sobrenome" required>
-     <input type="text" name="inputCPF" placeholder="CPF" required>
-     <input type="date" name="inputDataNasc" required>
-     <input type="tel" name="inputTelefone" placeholder="Telefone" required>
-     <input type="email" name="inputEmail" placeholder="Email" required>
-     <input type="password" name="inputSenha" placeholder="Senha" required>
 
-            <label class="foto-perfil">Selecionar foto de perfil:</label>
-            <section class="input-arquivo">
-                <input type="file" id="foto" hidden>
-                <label for="foto" class="btn-arquivo">Escolher arquivo</label>
-                <span>Nenhum arquivo escolhido</span>
-            </section>
+    <input
+        type="text"
+        name="inputCodigoCupom"
+        placeholder="Código do Cupom"
+        required
+    >
 
-            <button type="submit">CADASTRAR</button>
-        </form>
+    <input
+        type="number"
+        step="0.01"
+        name="inputDescontoCupom"
+        placeholder="Desconto (%)"
+        required
+    >
+
+    <input
+        type="date"
+        name="inputValidadeCupom"
+        required
+    >
+
+    <button type="submit">
+        CADASTRAR
+    </button>
+
+</form>
     </section>
 </main>
      <footer class="footer-completo">

@@ -105,7 +105,32 @@ class BancoDeDados{
         $listaProdutos = mysqli_query($conexao,$consulta);
         return $listaProdutos;
     }
-
-}
-
-?>
+    
+    public function inserirCupom($cupom){
+    
+        $conexao = $this->conectarBD();
+    
+        $codigo = $cupom->getCodigo();
+        $desconto = $cupom->getDesconto();
+        $validade = $cupom->getValidade();
+    
+        $stmt = mysqli_prepare(
+            $conexao,
+            "INSERT INTO cupom (codigo, desconto, validade)
+             VALUES (?, ?, ?)"
+        );
+    
+        mysqli_stmt_bind_param(
+            $stmt,
+            "sds",
+            $codigo,
+            $desconto,
+            $validade
+        );
+    
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+    }
+    
+    }
+    ?>

@@ -1,5 +1,9 @@
 <?php
 
+require_once __DIR__ . "/../model/BancoDeDados.php";
+require_once __DIR__ . "/../model/Produto.php";
+require_once __DIR__ . "/../model/Cupom.php";
+
 class Controlador {
 
     private $bancoDeDados;
@@ -14,25 +18,50 @@ class Controlador {
 
     public function loginCliente($email, $senha) {
         $cliente = $this->bancoDeDados->buscarClientePorEmail($email);
+
         if ($cliente && password_verify($senha, $cliente['senha'])) {
             return $cliente;
         }
+
         return false;
     }
 
     public function cadastrarFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario) {
         $this->bancoDeDados->inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario);
     }
+
     public function loginFuncionario($email, $senha) {
         $funcionario = $this->bancoDeDados->buscarFuncionarioPorEmail($email);
+
         if ($funcionario && password_verify($senha, $funcionario['senha'])) {
             return $funcionario;
         }
+
         return false;
     }
+
     public function cadastrarProduto($nome, $fabricante, $descricao, $valor, $quantidade) {
-        $produto = new Produto($nome, $fabricante, $descricao, $valor, $quantidade);
+
+        $produto = new Produto(
+            $nome,
+            $fabricante,
+            $descricao,
+            $valor,
+            $quantidade
+        );
+
         $this->bancoDeDados->inserirProduto($produto);
+    }
+
+    public function cadastrarCupom($codigo, $desconto, $validade){
+
+        $cupom = new Cupom(
+            $codigo,
+            $desconto,
+            $validade
+        );
+
+        $this->bancoDeDados->inserirCupom($cupom);
     }
 
 }
