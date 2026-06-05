@@ -19,15 +19,19 @@
         </section>
         <section class="cabecalho-menu">
             <nav>
-                <a href="index.php">Home</a>
-                <a href="cad_cliente.php">Cadastro Cliente</a>
-                <a href="cad_funcionario.php">Cadastro Funcionário</a>
-                <a href="cadastrar_produto">Cadastro Produto</a>
-                <a href="cad_cupom.php">Cadastro Cupom</a>
-                <a href="#">Ver Clientes</a>
-                <a href="#">Ver Funcionários</a>
-                <a href="ver_produto.php">Ver Produtos</a>
-            </nav>
+    <a href="home.php">Home</a>
+    <a href="cad_cliente.php">Cadastrar Cliente</a>
+    <a href="cad_funcionario.php">Cadastrar Funcionário</a>
+    <a href="cadastrar_produto.php">Cadastrar Produto</a>
+    <a href="cad_loja.php">Cadastrar Loja</a>
+    <a href="cad_cupom.php">Cadastrar Cupom</a>
+    <a href="visu_cliente.php">Ver Clientes</a>
+    <a href="visu_funcionario.php">Ver Funcionários</a>
+    <a href="visu_produto.php">Ver Produtos</a>
+    <a href="visu_loja.php">Ver Lojas</a>
+    <a href="visu_cupom.php">Ver Cupons</a>
+    <a href="../index.php">Sair</a>
+             </nav>
         </section>
     </header>        
 

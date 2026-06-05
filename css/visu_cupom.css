@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+header .cabecalho-xhopii {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(225, 96, 61);
+    display: flex;
+    justify-content: space-between;
+}
+
+header .cabecalho-xhopii .cabecalho-xhopii-logo {
+    width: 20%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+header .cabecalho-xhopii .cabecalho-xhopii-logo img {
+    width: 38px;
+    height: 42px;
+    margin-bottom: 14px;
+}
+
+header .cabecalho-xhopii .cabecalho-xhopii-logo h1 {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    margin-left: 7px;
+    margin-top: 24px;
+}
+
+header .cabecalho-xhopii .cabecalho-xhopii-sair {
+    width: 20%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header .cabecalho-xhopii .cabecalho-xhopii-sair a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    margin-right: 18px;
+}
+
+header .cabecalho-menu{
+    background: #FB7730;
+    padding: 10px;
+}
+
+header .cabecalho-menu nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+header .cabecalho-menu nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+header .cabecalho-menu nav a:hover{
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+.titulo{
+    text-align:center;
+    margin-top:30px;
+}
+
+.tabela-container{
+    width:80%;
+    margin:30px auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th{
+    background:#FB7730;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}

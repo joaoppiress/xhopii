@@ -65,10 +65,13 @@ class Controlador {
              $telefone,
              $email,
              $senha,
-             $cidade,
+             $cidade
         );
 
         $this->bancoDeDados->inserirLoja($loja);
+    }
+    public function retornarCupons(){
+    return $this->bancoDeDados->retornarCupons();
     }
 
 }

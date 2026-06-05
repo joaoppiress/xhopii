@@ -1,0 +1,23 @@
+header .cabecalho-menu{
+    background: #FB7730;
+    padding: 10px;
+}
+
+header .cabecalho-menu nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+header .cabecalho-menu nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+header .cabecalho-menu nav a:hover{
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}

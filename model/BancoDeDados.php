@@ -151,6 +151,12 @@ class BancoDeDados{
         mysqli_stmt_close($stmt);
         mysqli_close($conexao);
     }
+    public function retornarCupons(){
+    $conexao = $this->conectarBD();
+    $consulta = "SELECT * FROM cupom";
+
+    return mysqli_query($conexao, $consulta);
+    }
     
     }
     ?>

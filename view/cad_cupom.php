@@ -7,30 +7,30 @@
     <title>Xhopii</title>
 </head>
 <body>
-    <header>
+   <header>
         <section class="cabecalho-xhopii">
             <section class="cabecalho-xhopii-logo">   
                 <img src="../img/logo.png">
                 <h1>Xhopii</h1>
             </section>
             <section class="cabecalho-xhopii-sair">
-                <a href="index.php">Sair</a>
+                <a href="login.php">Sair</a>
             </section>
         </section>
         <section class="cabecalho-menu">
-            <nav>
-                <ul>
-                    <a href="home.php">Home</a>
-                    <a href="cad_cliente.php">Cadastro Cliente</a>
-                    <a href="cad_funcionario.php">Cadastro Funcionário</a>
-                    <a href="cadastrar_produto.php">Cadastro Produto</a>
-                    <a href="cad_cupom.php">Cadastro Cupom</a>
-                    <a href="cad_loja.php">Cadastro Loja</a>
-                    <a href="ver_clientes.php">Ver Clientes</a>
-                    <a href="ver_funcionarios.php">Ver Funcionários</a>
-                    <a href="ver_produtos.php">Ver Produtos</a>
-                </ul>
-            </nav>
+           <nav>
+    <a href="home.php">Home</a>
+    <a href="cad_cliente.php">Cadastrar Cliente</a>
+    <a href="cad_funcionario.php">Cadastrar Funcionário</a>
+    <a href="cadastrar_produto.php">Cadastrar Produto</a>
+    <a href="cad_loja.php">Cadastrar Loja</a>
+    <a href="cad_cupom.php">Cadastrar Cupom</a>
+    <a href="visu_cliente.php">Ver Clientes</a>
+    <a href="visu_funcionario.php">Ver Funcionários</a>
+    <a href="visu_produto.php">Ver Produtos</a>
+    <a href="visu_loja.php">Ver Lojas</a>
+    <a href="visu_cupom.php">Ver Cupons</a>
+</nav>
         </section>
     </header>
   <main>
