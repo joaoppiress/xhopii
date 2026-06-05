@@ -46,10 +46,9 @@ class BancoDeDados{
         $valor = $produto->get_Valor();
         $quantidade = $produto->get_Quantidade();
     
-        $consulta = "INSERT INTO produto (nome, fabricante, descricao, valor, quantidade)
-                     VALUES ('$nome', '$fabricante', '$descricao', '$valor', '$quantidade')";
-    
-        mysqli_query($conexao, $consulta);
+        $stmt = mysqli_prepare($conexao, "INSERT INTO produto (nome, fabricante, descricao, valor, quantidade, imagem) VALUES (?, ?, ?, ?, ?, ?)");
+        mysqli_stmt_bind_param($stmt, "sssdis", $nome, $fabricante, $descricao, $valor, $quantidade, $produto->get_Imagem());
+        mysqli_stmt_execute($stmt);
     }
     
     public function inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario){
@@ -76,13 +75,6 @@ class BancoDeDados{
         }
     }
 
-    public function buscarFuncionarioPorEmail($email){
-        $conexao = $this->conectarBD();
-        $stmt = mysqli_prepare($conexao, "SELECT * FROM funcionario WHERE email = ?");
-        mysqli_stmt_bind_param($stmt, "s", $email);
-        mysqli_stmt_execute($stmt);
-        return mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
-    }
     
     public function retornarClientes(){
         $conexao = $this->conectarBD();
@@ -91,12 +83,6 @@ class BancoDeDados{
         return $listaClientes;
     }
     
-    public function retornarFuncionario(){
-        $conexao = $this->conectarBD();
-        $consulta = "SELECT * FROM funcionario";
-        $listaFuncionarios = mysqli_query($conexao,$consulta);
-        return $listaFuncionarios;
-    }
     
     public function retornarProdutos(){
         $conexao = $this->conectarBD();

@@ -1,3 +1,9 @@
+<?php
+require_once "../model/BancoDeDados.php";
+
+$banco = new BancoDeDados("localhost", "root", "", "xhopii");
+$produtos = $banco->retornarProdutos();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -81,68 +87,23 @@
 
     <section class="produtos-grid">
 
-        <section class="produto-card">
-            <img src="../img/produto1.png" alt="Produto 1">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
+<?php while($produto = mysqli_fetch_assoc($produtos)) { ?>
 
-        <section class="produto-card">
-            <img src="../img/produto1.png" alt="Produto 2">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="../img/produto1.png" alt="Produto 3">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="../img/produto1.png" alt="Produto 4">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="../img/produto1.png" alt="Produto 5">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="../img/produto1.png" alt="Produto 6">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="../img/produto1.png" alt="Produto 7">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="../img/produto1.png" alt="Produto 8">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="../img/produto1.png" alt="Produto 9">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
-        <section class="produto-card">
-            <img src="../img/produto1.png" alt="Produto 10">
-            <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-            <p class="produto-preco">R$ 59,90</p>
-            <p class="produto-estoque">171 disponíveis</p>
-        </section>
+    <section class="produto-card">
+        <img src="../img/produtos/<?php echo $produto['imagem']; ?>" alt="Produto">
 
+        <h3 class="produto-nome"><?php echo $produto['nome']; ?></h3>
+
+        <p class="produto-estoque"><?php echo $produto['descricao']; ?></p>
+
+        <p class="produto-preco">
+            R$ <?php echo number_format($produto['valor'], 2, ',', '.'); ?>
+        </p>
+    </section>
+
+<?php } ?>
+
+</section>
         <!-- repete o produto-card para cada produto -->
 
     </section>

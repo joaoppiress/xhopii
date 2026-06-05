@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Jun-2026 às 20:47
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 05/06/2026 às 06:39
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cliente`
+-- Estrutura para tabela `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -39,7 +39,7 @@ CREATE TABLE `cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `cliente`
+-- Despejando dados para a tabela `cliente`
 --
 
 INSERT INTO `cliente` (`id`, `cpf`, `nome`, `sobrenome`, `dataNascimento`, `telefone`, `email`, `senha`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `cliente` (`id`, `cpf`, `nome`, `sobrenome`, `dataNascimento`, `tele
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cupom`
+-- Estrutura para tabela `cupom`
 --
 
 CREATE TABLE `cupom` (
@@ -59,16 +59,16 @@ CREATE TABLE `cupom` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `cupom`
+-- Despejando dados para a tabela `cupom`
 --
 
 INSERT INTO `cupom` (`id`, `codigo`, `desconto`, `validade`) VALUES
-(1, '1', '2.00', '2027-02-12');
+(1, '1', 2.00, '2027-02-12');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `funcionario`
+-- Estrutura para tabela `funcionario`
 --
 
 CREATE TABLE `funcionario` (
@@ -85,16 +85,16 @@ CREATE TABLE `funcionario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `funcionario`
+-- Despejando dados para a tabela `funcionario`
 --
 
 INSERT INTO `funcionario` (`id`, `cpf`, `nome`, `sobrenome`, `dataNascimento`, `telefone`, `cargo`, `email`, `senha`, `salario`) VALUES
-(1, '123432121', 'José', 'Santos', '1990-03-12', '12356543', 'Gerente', 'jose@xhopii.com', '$2y$10$5uoj1d0BtP2rd7nNtZ9Kl.6WWLw55clkrViIIvdM4dDNrJdGl9pSq', '10000.00');
+(1, '123432121', 'José', 'Santos', '1990-03-12', '12356543', 'Gerente', 'jose@xhopii.com', '$2y$10$5uoj1d0BtP2rd7nNtZ9Kl.6WWLw55clkrViIIvdM4dDNrJdGl9pSq', 10000.00);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `loja`
+-- Estrutura para tabela `loja`
 --
 
 CREATE TABLE `loja` (
@@ -109,7 +109,7 @@ CREATE TABLE `loja` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `loja`
+-- Despejando dados para a tabela `loja`
 --
 
 INSERT INTO `loja` (`id`, `nome`, `descricao`, `telefone`, `email`, `senha`, `cidade`, `dataCadastro`) VALUES
@@ -118,7 +118,7 @@ INSERT INTO `loja` (`id`, `nome`, `descricao`, `telefone`, `email`, `senha`, `ci
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produto`
+-- Estrutura para tabela `produto`
 --
 
 CREATE TABLE `produto` (
@@ -127,15 +127,23 @@ CREATE TABLE `produto` (
   `fabricante` varchar(100) NOT NULL,
   `descricao` text DEFAULT NULL,
   `valor` decimal(10,2) NOT NULL,
+  `quantidade` int(11) NOT NULL,
   `imagem` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `produto`
+--
+
+INSERT INTO `produto` (`id`, `nome`, `fabricante`, `descricao`, `valor`, `quantidade`, `imagem`) VALUES
+(3, 'Camiseta Azul Marinho', 'Coders', 'Camiseta com estampa de código', 120.00, 120, 'produto2.png');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `cliente`
+-- Índices de tabela `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`),
@@ -143,13 +151,13 @@ ALTER TABLE `cliente`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices para tabela `cupom`
+-- Índices de tabela `cupom`
 --
 ALTER TABLE `cupom`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `funcionario`
+-- Índices de tabela `funcionario`
 --
 ALTER TABLE `funcionario`
   ADD PRIMARY KEY (`id`),
@@ -157,20 +165,20 @@ ALTER TABLE `funcionario`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices para tabela `loja`
+-- Índices de tabela `loja`
 --
 ALTER TABLE `loja`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices para tabela `produto`
+-- Índices de tabela `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -201,7 +209,7 @@ ALTER TABLE `loja`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

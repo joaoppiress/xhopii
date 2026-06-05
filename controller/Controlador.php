@@ -33,14 +33,15 @@ class Controlador {
     }
 
 
-    public function cadastrarProduto($nome, $fabricante, $descricao, $valor, $quantidade) {
+    public function cadastrarProduto($nome, $fabricante, $descricao, $valor, $quantidade, $imagem) {
 
         $produto = new Produto(
             $nome,
             $fabricante,
             $descricao,
             $valor,
-            $quantidade
+            $quantidade,
+            $imagem
         );
 
         $this->bancoDeDados->inserirProduto($produto);

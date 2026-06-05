@@ -33,27 +33,27 @@
         <section class="conteudo-imagens">
             <label class="btn-camisa">
                 <input type="radio" name="camisa" value="preto">
-                <img src="../img/produto1.png">
+                <img src="../img/produtos/produto1.png">
             </label>
             <label class="btn-camisa">
                 <input type="radio" name="camisa" value="preto">
-                <img src="../img/produto2.png">
+                <img src="../img/produtos/produto2.png">
             </label>
             <label class="btn-camisa">
                 <input type="radio" name="camisa" value="preto">
-                <img src="../img/produto3.png">
+                <img src="../img/produtos/produto3.png">
             </label>
             <label class="btn-camisa">
                 <input type="radio" name="camisa" value="preto">
-                <img src="../img/produto4.png">
+                <img src="../img/produtos/produto4.png">
             </label>
             <label class="btn-camisa">
                 <input type="radio" name="camisa" value="preto">
-                <img src="../img/produto5.png">
+                <img src="../img/produtos/produto5.png">
             </label>
         </section>
             <section class="conteudo-imagem">
-                <img src="../img/produto1.png">
+                <img src="../img/produtos/produto1.png">
             </section>
     </section>
     <section class="especificacao">

@@ -20,7 +20,7 @@
         <section class="cabecalho-menu">
             <nav>
                 <ul>
-                    <a href="index.php">Home</a>
+                    <a href="home.php">Home</a>
                     <a href="cad_cliente.php">Cadastro Cliente</a>
                     <a href="cad_funcionario.php">Cadastro Funcionário</a>
                     <a href="cadastrar_produto.php">Cadastro Produto</a>
@@ -35,19 +35,25 @@
   <main>
     <section class="cadastro-produto">
         <h2>Cadastrar Produto</h2>
-        <form action="../processamento/processamento.php" method="POST">
+        <form action="../processamento/processamento.php" method="POST" enctype="multipart/form-data">
             <input type="text" name="inputNomeProd" placeholder="Nome" required>
             <input type="text" name="inputFabricanteProd" placeholder="Fabricante" required>
             <input type="text" name="inputDescricaoProd"placeholder="Descrição" required>
             <input type="text" name="inputValorProd"placeholder="Valor" required>
             <input type="text" name="inputQuantProd"placeholder="Quantidade" required>
-
             <label class="foto-perfil">Selecionar foto do produto:</label>
             <section class="input-arquivo">
-                <input type="file" id="foto" hidden>
-                <label for="foto" class="btn-arquivo">Escolher arquivo</label>
-                <span>Nenhum arquivo escolhido</span>
-            </section>
+                <input type="file"
+                    id="fotoProduto"
+                    name="imagemProduto"
+                    accept="image/*"
+                    hidden>
+                <label for="fotoProduto" class="btn-arquivo">
+                    Escolher arquivo
+                </label>
+
+    <span id="nomeArquivo">Nenhum arquivo escolhido</span>
+</section>
 
             <button type="submit">CADASTRAR</button>
 </form>

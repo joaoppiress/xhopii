@@ -49,7 +49,6 @@ if(isset($_POST['inputNome']) && isset($_POST['inputSobrenome']) &&
     die();
 }
 
-//Cadastro de Funcionário
 if(isset($_POST['inputNomeFunc']) && isset($_POST['inputSobrenomeFunc']) && 
    isset($_POST['inputCPFFunc']) && isset($_POST['inputDataNascFunc']) && 
    isset($_POST['inputTelefoneFunc']) && isset($_POST['inputCargoFunc']) 
@@ -94,35 +93,44 @@ if (
     $nome = trim($_POST['inputNomeProd']);
     $fabricante = trim($_POST['inputFabricanteProd']);
     $descricao = trim($_POST['inputDescricaoProd']);
-    $valorInformado = str_replace(',', '.', trim($_POST['inputValorProd']));
-    $quantidadeInformada = trim($_POST['inputQuantProd']);
+    $valor = str_replace(',', '.', trim($_POST['inputValorProd']));
+    $quantidade = trim($_POST['inputQuantProd']);
+    $imagem = $_FILES['imagemProduto'];
 
-    if (!is_numeric($valorInformado) || (float) $valorInformado < 0) {
+    $pastaDestino = __DIR__ . "/../img/produtos/";
+
+    if (!is_dir($pastaDestino)) {
+        mkdir($pastaDestino, 0777, true);
+    }
+
+    $nomeImagem = basename($imagem['name']);
+    $caminhoDestino = $pastaDestino . $nomeImagem;
+
+    if (!file_exists($caminhoDestino)) {
+        move_uploaded_file($imagem['tmp_name'], $caminhoDestino);
+    }
+
+    if (!is_numeric($valor) || (float) $valor < 0) {
         error_log('[DEBUG cadastro produto] Valor invalido recebido.');
         header('Location:../view/cadastrar_produto.php?erro=valor');
         die();
     }
 
-    if (!is_numeric($quantidadeInformada) || (int) $quantidadeInformada < 0) {
+    if (!is_numeric($quantidade) || (int) $quantidade < 0) {
         error_log('[DEBUG cadastro produto] Quantidade invalida recebida.');
         header('Location:../view/cadastrar_produto.php?erro=quantidade');
         die();
     }
 
     try {
-        $controlador->cadastrarProduto(
-            $nome,
-            $fabricante,
-            $descricao,
-            (float) $valorInformado,
-            (int) $quantidadeInformada
-        );
-
+        $controlador->cadastrarProduto($nome, $fabricante, $descricao, (float) $valor, (int) $quantidade, $nomeImagem);
         header('Location:../view/cadastrar_produto.php?cadastro=sucesso');
     } catch (Throwable $erro) {
-        error_log('[DEBUG cadastro produto] ' . $erro->getMessage());
-        header('Location:../view/cadastrar_produto.php?erro=cadastro');
-    }
+    echo "<pre>";
+    print_r($erro);
+    echo "</pre>";
+    die();
+}
 
     die();
 }
