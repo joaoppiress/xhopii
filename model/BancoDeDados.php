@@ -21,11 +21,11 @@ class BancoDeDados{
         return($conexao);
     }
     
-    public function inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha){
+    public function inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha, $foto){
         $conexao = $this->conectarBD();
         $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
-        $stmt = mysqli_prepare($conexao, "INSERT INTO cliente (cpf, nome, sobrenome, dataNascimento, telefone, email, senha) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        mysqli_stmt_bind_param($stmt, "sssssss", $cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senhaHash);
+        $stmt = mysqli_prepare($conexao, "INSERT INTO cliente (cpf, nome, sobrenome, dataNascimento, telefone, email, senha, foto) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        mysqli_stmt_bind_param($stmt, "ssssssss", $cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senhaHash, $foto);
         mysqli_stmt_execute($stmt);
     }
 

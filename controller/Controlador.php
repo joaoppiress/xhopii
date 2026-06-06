@@ -14,9 +14,29 @@ class Controlador {
         $this->bancoDeDados = new BancoDeDados("localhost", "root", "", "xhopii");
     }
 
-    public function cadastrarCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha) {
-        $this->bancoDeDados->inserirCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha);
-    }
+    public function cadastrarCliente(
+    $cpf,
+    $nome,
+    $sobrenome,
+    $dataNasc,
+    $telefone,
+    $email,
+    $senha,
+    $foto
+    ) 
+    {
+
+    $this->bancoDeDados->inserirCliente(
+        $cpf,
+        $nome,
+        $sobrenome,
+        $dataNasc,
+        $telefone,
+        $email,
+        $senha,
+        $foto
+    );
+    }   
 
     public function loginCliente($email, $senha) {
         $cliente = $this->bancoDeDados->buscarClientePorEmail($email);
@@ -71,7 +91,11 @@ class Controlador {
         $this->bancoDeDados->inserirLoja($loja);
     }
     public function retornarCupons(){
-    return $this->bancoDeDados->retornarCupons();
+        return $this->bancoDeDados->retornarCupons();
+    }
+
+    public function retornarClientes(){
+        return $this->bancoDeDados->retornarClientes();
     }
 
 }

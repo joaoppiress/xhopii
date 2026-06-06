@@ -1,226 +1,137 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.header-index {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15%;
-    background-color: #c6c6c6;
-    height: 80px;
-    width: 100%;
-    border-bottom: 1px solid #e0e0e0;
 }
 
-.header-index-logo {
+body {
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #C3C3C3;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+section.redefinir-senha {
+    background-color: #fff;
+    padding: 36px 45px 40px 45px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    position: relative;
+}
+
+nav.voltar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+nav.voltar a {
+    text-decoration: none;
+    color: #FB5630;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+nav.voltar a:hover {
+    color: #c94420;
+}
+
+figure.logo-topo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+figure.logo-topo figcaption {
+    font-size: 34px;
+    font-weight: bold;
+    color: #FB5630;
+    letter-spacing: -1px;
+}
+
+section.redefinir-senha h2 {
+    color: #FB5630;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+section.redefinir-senha p.descricao {
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+    margin-bottom: 22px;
+    line-height: 1.5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
     gap: 12px;
 }
 
-.header-index-logo img {
-    height: 50px;
+form label {
+    font-size: 12px;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: -6px;
 }
 
-.header-index-logo h1 {
-    color: rgb(225, 96, 61);
-    font-size: 32px;
-}
-
-.header-index-logo p {
-    font-size: 24px;
-    color: #333;
-}
-.header-index-ajuda a {
-    text-decoration: none;
-    color: rgb(225, 96, 61);
-    font-size: 15px;
-}
-.login-main {
-    background-color: rgb(225, 96, 61);
-    width: 100%;
-    min-height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 0;
-}
-.login-main{
-    background-color: white;
-}
-.login-card {
-    background-color: #ffffff;
-    width: 400px;
-    padding: 35px;
+form input[type="email"] {
+    border: 1px solid #ccc;
     border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
+    padding: 10px 10px;
+    font-size: 13px;
+    outline: none;
+    width: 100%;
+    color: #333;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    transition: border-color 0.2s;
 }
 
-.login-card h2 {
-    font-size: 20px;
-    margin-bottom: 25px;
-    font-weight: normal;
-    display: flex;
-    justify-content: center;
-}
-.input-login {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #dbdbdb;
-    border-radius: 2px;
+form input[type="email"]:focus {
+    border-color: #FB5630;
 }
 
-.btn-login {
-    width: 100%;
-    padding: 12px;
-    background-color: rgb(225, 96, 61);
-    color: white;
+form input[type="email"]::placeholder {
+    color: #aaa;
+    font-size: 12px;
+}
+
+form button[type="submit"] {
+    background-color: #FB5630;
+    color: #fff;
     border: none;
+    border-radius: 4px;
+    padding: 11px;
+    font-size: 13px;
     font-weight: bold;
     cursor: pointer;
-}
-
-.login-links {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.login-links a {
-    text-decoration: none;
-    color: #0055aa;
-    font-size: 12px;
-}
-
-/* DIVISOR OU */
-.divisor-ou {
-    display: flex;
-    align-items: center;
-    margin: 25px 0;
-    color: #ccc;
-    font-size: 12px;
-}
-
-.divisor-ou::before, .divisor-ou::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background-color: #eee;
-}
-
-.divisor-ou span {
-    padding: 0 10px;
-}
-.social-area {
-    display: flex;          /* Ativa o Flexbox */
-    flex-direction: row;    /* Força o alinhamento em linha (lado a lado) */
-    gap: 10px;              /* Espaço entre os botões */
-    width: 100%;            /* Ocupa toda a largura do card */
-    margin-top: 15px;
-    margin-bottom: 25px;
-}
-/* --- Ajustes dos Botões Sociais --- */
-.btn-social {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #dbdbdb;
-    background: white;
-    cursor: pointer;
-    font-size: 13px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 8px; /* Espaço entre ícone e texto */
-}
-
-.btn-social img {
-    height: 18px; /* Tamanho padronizado dos ícones sociais */
-    width: auto;
-}
-.footer-completo {
-    background-color: #fbfbfb;
-    border-top: 1px solid #e0e0e0;
-    padding: 40px 0 20px 0;
-    margin-top: 10px;
+    margin-top: 6px;
+    letter-spacing: 1px;
     width: 100%;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 0.2s;
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    padding: 0 20px;
-}
-
-.footer-col h4 {
-    font-size: 12px;
-    color: #333;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.footer-col ul li {
-    font-size: 12px;
-    color: #757575;
-    margin-bottom: 8px;
-    list-style: none;
-}
-
-.pay-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    max-width: 180px;
-}
-
-.pay-grid img {
-    height: 20px;
-    width: auto;
-    background: white;
-    padding: 2px;
-    border: 1px solid #eee;
-    border-radius: 2px;
-}
-
-.social-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-    font-size: 12px;
-    color: #757575;
-}
-
-.social-item img { height: 18px; width: auto; }
-
-.qr-img {
-    background: white;
-    padding: 5px;
-    border: 1px solid #ddd;
-    width: 90px;
-}
-
-.app-links img {
-    display: block;
-    height: 20px;
-    margin: 5px 0;
-}
-
-.copyright-barra {
-    text-align: center;
-    border-top: 1px solid #eee;
-    margin-top: 30px;
-    padding-top: 20px;
-    font-size: 12px;
-    color: #999;
+form button[type="submit"]:hover {
+    background-color: #e04e25;
 }

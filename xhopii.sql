@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/06/2026 às 06:39
+-- Tempo de geração: 07/06/2026 às 00:30
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.0.30
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,15 +35,17 @@ CREATE TABLE `cliente` (
   `dataNascimento` date NOT NULL,
   `telefone` varchar(20) DEFAULT NULL,
   `email` varchar(150) NOT NULL,
-  `senha` varchar(255) NOT NULL
+  `senha` varchar(255) NOT NULL,
+  `foto` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `cliente`
 --
 
-INSERT INTO `cliente` (`id`, `cpf`, `nome`, `sobrenome`, `dataNascimento`, `telefone`, `email`, `senha`) VALUES
-(1, '123456789012', 'João', 'Silva', '1999-06-10', '18 996312982', 'joao@xhopii.com', '$2y$10$nJqP03vk41zOhxs.tubP6OmD8lv1NFALvgFvZ4WB54mOsGK3g7pBu');
+INSERT INTO `cliente` (`id`, `cpf`, `nome`, `sobrenome`, `dataNascimento`, `telefone`, `email`, `senha`, `foto`) VALUES
+(1, '123456789012', 'João', 'Silva', '1999-06-10', '18 996312982', 'joao@xhopii.com', '$2y$10$nJqP03vk41zOhxs.tubP6OmD8lv1NFALvgFvZ4WB54mOsGK3g7pBu', NULL),
+(2, '2121123434', 'Cristiano', 'Ronaldo', '2009-12-21', '3124242523523', 'cr7@xhopii.com', '$2y$10$S48YV1T1CEmoE4TnoF7FfOQvL.qYzYYP.cxygrqTdfFqAh11zRLuu', '1780782028_Ronaldo.jpg');
 
 -- --------------------------------------------------------
 
@@ -63,7 +65,9 @@ CREATE TABLE `cupom` (
 --
 
 INSERT INTO `cupom` (`id`, `codigo`, `desconto`, `validade`) VALUES
-(1, '1', 2.00, '2027-02-12');
+(1, '1', 2.00, '2027-02-12'),
+(2, '19', 0.10, '2029-12-23'),
+(3, '4', 0.10, '2018-11-11');
 
 -- --------------------------------------------------------
 
@@ -185,13 +189,13 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `cupom`
 --
 ALTER TABLE `cupom`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `funcionario`

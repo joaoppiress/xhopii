@@ -36,7 +36,7 @@
   <main>
     <section class="cadastro-cliente">
         <h2>Cadastrar Cliente</h2>
-        <form action="../processamento/processamento.php" method="POST">
+        <form action="../processamento/processamento.php" method="POST" enctype="multipart/form-data">
      <input type="text" name="inputNome" placeholder="Nome" required>
      <input type="text" name="inputSobrenome" placeholder="Sobrenome" required>
      <input type="text" name="inputCPF" placeholder="CPF" required>
@@ -47,7 +47,7 @@
 
             <label class="foto-perfil">Selecionar foto de perfil:</label>
             <section class="input-arquivo">
-                <input type="file" id="foto" hidden>
+                <input type="file" id="foto" name="fotoCliente" accept="image/*" hidden>
                 <label for="foto" class="btn-arquivo">Escolher arquivo</label>
                 <span>Nenhum arquivo escolhido</span>
             </section>
@@ -113,5 +113,14 @@
             © 2023 Xhopii. Todos os direitos acadêmicos reservados
         </p>
     </footer>
+    <script>
+        const inputFoto = document.getElementById('foto');
+        if (inputFoto) {
+            inputFoto.addEventListener('change', function () {
+                const span = this.closest('.input-arquivo').querySelector('span');
+                span.textContent = this.files.length > 0 ? this.files[0].name : 'Nenhum arquivo escolhido';
+            });
+        }
+    </script>
 </body>
 </html>

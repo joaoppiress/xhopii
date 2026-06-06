@@ -30,10 +30,15 @@ if(isset($_POST['inputEmailLog']) && isset($_POST['inputSenhaLog'])){
 }
 
 //Cadastro de Cliente
-if(isset($_POST['inputNome']) && isset($_POST['inputSobrenome']) && 
-   isset($_POST['inputCPF']) && isset($_POST['inputDataNasc']) && 
-   isset($_POST['inputTelefone']) && isset($_POST['inputEmail']) &&
-   isset($_POST['inputSenha'])){
+if(
+   isset($_POST['inputNome']) &&
+   isset($_POST['inputSobrenome']) &&
+   isset($_POST['inputCPF']) &&
+   isset($_POST['inputDataNasc']) &&
+   isset($_POST['inputTelefone']) &&
+   isset($_POST['inputEmail']) &&
+   isset($_POST['inputSenha'])
+){
 
     $nome = $_POST['inputNome'];
     $sobrenome = $_POST['inputSobrenome'];
@@ -42,10 +47,41 @@ if(isset($_POST['inputNome']) && isset($_POST['inputSobrenome']) &&
     $telefone = $_POST['inputTelefone'];
     $email = $_POST['inputEmail'];
     $senha = $_POST['inputSenha'];
-    
-    $controlador->cadastrarCliente($cpf, $nome, $sobrenome, $dataNasc, $telefone, $email, $senha);
 
-    header('Location:../view/cad_cliente.php');
+    $nomeFoto = "sem-foto.png";
+
+    if(
+        isset($_FILES['fotoCliente']) &&
+        $_FILES['fotoCliente']['error'] == 0
+    ){
+
+        $pastaDestino = __DIR__ . "/../img/clientes/";
+
+        if(!is_dir($pastaDestino)){
+            mkdir($pastaDestino,0777,true);
+        }
+
+        $nomeFoto = time() . "_" .
+                    basename($_FILES['fotoCliente']['name']);
+
+        move_uploaded_file(
+            $_FILES['fotoCliente']['tmp_name'],
+            $pastaDestino . $nomeFoto
+        );
+    }
+
+    $controlador->cadastrarCliente(
+        $cpf,
+        $nome,
+        $sobrenome,
+        $dataNasc,
+        $telefone,
+        $email,
+        $senha,
+        $nomeFoto
+    );
+
+    header('Location:../view/cad_cliente.php?cadastro=sucesso');
     die();
 }
 
