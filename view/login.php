@@ -29,7 +29,7 @@
             </form>
     
             <nav class="login-links">
-                <a href="#">Esqueci minha senha</a>
+                <a href="redefinir.php">Esqueci minha senha</a>
                 <a href="#">Fazer login com SMS</a>
             </nav>
     

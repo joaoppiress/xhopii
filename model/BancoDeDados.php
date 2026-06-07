@@ -189,6 +189,52 @@ class BancoDeDados{
 
     return mysqli_query($conexao, $consulta);
     }
-    
+
+    /**
+     * Verifica se o e-mail existe em cliente ou funcionario
+     * e atualiza a senha. Retorna 'cliente', 'funcionario' ou false.
+     */
+    public function atualizarSenha($email, $novaSenha){
+        $conexao  = $this->conectarBD();
+        $senhaHash = password_hash($novaSenha, PASSWORD_DEFAULT);
+
+        // --- verifica na tabela cliente ---
+        $stmt = mysqli_prepare($conexao, "SELECT id FROM cliente WHERE email = ?");
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        $res = mysqli_stmt_get_result($stmt);
+
+        if (mysqli_num_rows($res) > 0) {
+            mysqli_stmt_close($stmt);
+            $upd = mysqli_prepare($conexao, "UPDATE cliente SET senha = ? WHERE email = ?");
+            mysqli_stmt_bind_param($upd, "ss", $senhaHash, $email);
+            mysqli_stmt_execute($upd);
+            mysqli_stmt_close($upd);
+            mysqli_close($conexao);
+            return 'cliente';
+        }
+        mysqli_stmt_close($stmt);
+
+        // --- verifica na tabela funcionario ---
+        $stmt2 = mysqli_prepare($conexao, "SELECT id FROM funcionario WHERE email = ?");
+        mysqli_stmt_bind_param($stmt2, "s", $email);
+        mysqli_stmt_execute($stmt2);
+        $res2 = mysqli_stmt_get_result($stmt2);
+
+        if (mysqli_num_rows($res2) > 0) {
+            mysqli_stmt_close($stmt2);
+            $upd2 = mysqli_prepare($conexao, "UPDATE funcionario SET senha = ? WHERE email = ?");
+            mysqli_stmt_bind_param($upd2, "ss", $senhaHash, $email);
+            mysqli_stmt_execute($upd2);
+            mysqli_stmt_close($upd2);
+            mysqli_close($conexao);
+            return 'funcionario';
+        }
+        mysqli_stmt_close($stmt2);
+        mysqli_close($conexao);
+
+        return false;
+    }
+
     }
     ?>

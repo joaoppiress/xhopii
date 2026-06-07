@@ -1,36 +1,100 @@
+<?php
+$erro    = isset($_GET['erro'])    ? $_GET['erro']    : '';
+$sucesso = isset($_GET['sucesso']) ? $_GET['sucesso'] : '';
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../css/redefinir.css">
-    <title>Redifinir Senha</title>
+    <link rel="stylesheet" href="../css/redefinir.css">
+    <title>Redefinir Senha — Xhopii</title>
 </head>
-<body>
-    <header>
-        <section class ="header-index">
-            <section class="header-index-logo">   
-           <img src="img/logo.png" alt="Xhopii Logo">
-            <h1>Xhopii</h1>    
+<body class="body-index">
+
+    <header class="header-index">
+        <section class="header-index-logo">
+            <img src="../img/logo.png" alt="Xhopii Logo">
+            <h1>Xhopii</h1>
             <span class="divisor-v"></span>
-            <p>Redefinir senha</p>         
-            </section>
-             <nav class="header-index-ajuda">
-            <a href="#">Precisa de ajuda?</a>
-        </nav>
+            <p>Entre</p>
         </section>
+        <nav class="header-index-ajuda">
+            <a href="view/home.php">Precisa de ajuda?</a>
+        </nav>
     </header>
 
-    <main class="login-main">
-        <article class="login-card">
+    <main class="redefinir-main">
+        <section class="redefinir-card">
+
+            <nav class="voltar">
+                <a href="../view/login.php" title="Voltar ao login">&#8592;</a>
+            </nav>
+
             <h2>Redefinir senha</h2>
-            <form>
-                <input type="text" placeholder="Email" class="input-login">
-                <button type="submit" class="btn-login">ENVIAR</button>
+            <p class="descricao">
+                Informe o e-mail cadastrado como cliente ou funcionário<br>e escolha uma nova senha.
+            </p>
+
+            <?php if ($erro === 'email_nao_encontrado'): ?>
+                <p class="mensagem erro">
+                    E-mail não encontrado. Verifique e tente novamente.
+                </p>
+            <?php elseif ($erro === 'senhas_nao_conferem'): ?>
+                <p class="mensagem erro">
+                    As senhas não conferem. Tente novamente.
+                </p>
+            <?php elseif ($erro === 'campos_vazios'): ?>
+                <p class="mensagem erro">
+                    Preencha todos os campos.
+                </p>
+            <?php endif; ?>
+
+            <?php if ($sucesso === '1'): ?>
+                <p class="mensagem sucesso">
+                    Senha redefinida com sucesso!
+                    <a href="../index.php">Fazer login</a>
+                </p>
+            <?php endif; ?>
+
+            <form method="POST" action="../processamento/processamento.php">
+
+                <label for="inputEmailRedef">E-mail</label>
+                <input
+                    type="email"
+                    id="inputEmailRedef"
+                    name="inputEmailRedef"
+                    placeholder="seu@email.com"
+                    required
+                    value="<?php echo htmlspecialchars(isset($_GET['email']) ? $_GET['email'] : ''); ?>"
+                >
+
+                <label for="inputNovaSenha">Nova senha</label>
+                <input
+                    type="password"
+                    id="inputNovaSenha"
+                    name="inputNovaSenha"
+                    placeholder="Nova senha"
+                    required
+                >
+
+                <label for="inputConfirmaSenha">Confirmar nova senha</label>
+                <input
+                    type="password"
+                    id="inputConfirmaSenha"
+                    name="inputConfirmaSenha"
+                    placeholder="Confirme a nova senha"
+                    required
+                >
+
+                <button type="submit">ENVIAR</button>
+
             </form>
-        </article>
+
+        </section>
     </main>
-     <footer class="footer-completo">
+
+    <footer class="footer-completo">
         <section class="footer-container">
 
             <section class="footer-col">
@@ -87,5 +151,6 @@
             © 2023 Xhopii. Todos os direitos acadêmicos reservados
         </p>
     </footer>
+
 </body>
 </html>

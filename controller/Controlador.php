@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__ . "/../model/BancoDeDados.php";
 require_once __DIR__ . "/../model/Produto.php";
 require_once __DIR__ . "/../model/Cupom.php";
@@ -97,6 +96,14 @@ class Controlador {
     }
     public function retornarCupons(){
         return $this->bancoDeDados->retornarCupons();
+    }
+
+    /**
+     * Verifica se o e-mail existe (cliente ou funcionario) e atualiza a senha.
+     * Retorna 'cliente', 'funcionario' ou false.
+     */
+    public function redefinirSenha($email, $novaSenha){
+        return $this->bancoDeDados->atualizarSenha($email, $novaSenha);
     }
 
     public function retornarClientes(){

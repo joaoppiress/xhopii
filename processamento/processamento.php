@@ -309,4 +309,34 @@ if(
         exit;
     }
 }
+
+// Redefinir Senha
+if(
+    isset($_POST['inputEmailRedef']) &&
+    isset($_POST['inputNovaSenha']) &&
+    isset($_POST['inputConfirmaSenha'])
+){
+    $email         = trim($_POST['inputEmailRedef']);
+    $novaSenha     = $_POST['inputNovaSenha'];
+    $confirmaSenha = $_POST['inputConfirmaSenha'];
+
+    if(empty($email) || empty($novaSenha) || empty($confirmaSenha)){
+        header('Location:../view/redefinir.php?erro=campos_vazios');
+        die();
+    }
+
+    if($novaSenha !== $confirmaSenha){
+        header('Location:../view/redefinir.php?erro=senhas_nao_conferem');
+        die();
+    }
+
+    $resultado = $controlador->redefinirSenha($email, $novaSenha);
+
+    if($resultado){
+        header('Location:../view/redefinir.php?sucesso=1');
+    } else {
+        header('Location:../view/redefinir.php?erro=email_nao_encontrado&email=' . urlencode($email));
+    }
+    die();
+}
 ?>
