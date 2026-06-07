@@ -25,11 +25,12 @@
     <a href="cadastrar_produto.php">Cadastrar Produto</a>
     <a href="cad_loja.php">Cadastrar Loja</a>
     <a href="cad_cupom.php">Cadastrar Cupom</a>
-    <a href="visu_cliente.php">Ver Clientes</a>
-    <a href="visu_funcionario.php">Ver Funcionários</a>
-    <a href="visu_produto.php">Ver Produtos</a>
-    <a href="visu_loja.php">Ver Lojas</a>
+    <a href="visu_clientes.php">Ver Clientes</a>
+    <a href="visu_funcionarios.php">Ver Funcionários</a>
+    <a href="visu_produtos.php">Ver Produtos</a>
+    <a href="visu_lojas.php">Ver Lojas</a>
     <a href="visu_cupom.php">Ver Cupons</a>
+    
 </nav>
         </section>
     </header>
@@ -37,7 +38,7 @@
     <section class="cadastro-loja">
     <h2>Cadastrar Loja</h2>
 
-<form action="../processamento/processamento.php" method="POST">
+<form action="../processamento/processamento.php" method="POST" enctype="multipart/form-data">
         <input type="text" name="inputNomeLoja" placeholder="Nome da Loja" required>
         <input type="text" name="inputDescricaoLoja" placeholder="Descrição da Loja" required>
         <input type="tel" name="inputTelefoneLoja" placeholder="Telefone" required>
@@ -45,11 +46,15 @@
         <input type="password" name="inputSenhaLoja" placeholder="Senha" required>
         <input type="text" name="inputCidadeLoja" placeholder="Cidade" required>
     <label class="foto-perfil">Selecionar logo da loja:</label>
-    <section class="input-arquivo">
-        <input type="file" id="logoLoja" hidden>
-        <label for="logoLoja" class="btn-arquivo">Escolher arquivo</label>
-        <span>Nenhum arquivo escolhido</span>
-    </section>
+   <section class="input-arquivo">
+                <input type="file"
+                    id="fotoLoja"
+                    name="imagemLoja"
+                    accept="image/*"
+                    hidden>
+                <label for="fotoLoja" class="btn-arquivo">
+                    Escolher arquivo
+                </label>
     <button type="submit">CADASTRAR LOJA</button>
 </form>
     </section>

@@ -51,13 +51,13 @@ class BancoDeDados{
         mysqli_stmt_execute($stmt);
     }
     
-    public function inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario){
+    public function inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario, $imagem){
         $conexao = $this->conectarBD();
         $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
         try {
-            $stmt = mysqli_prepare($conexao, "INSERT INTO funcionario (cpf, nome, sobrenome, dataNascimento, telefone, cargo, email, senha, salario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-            mysqli_stmt_bind_param($stmt, "ssssssssd", $cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senhaHash, $salario);
+            $stmt = mysqli_prepare($conexao, "INSERT INTO funcionario (cpf, nome, sobrenome, dataNascimento, telefone, cargo, email, senha, salario, imagem) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            mysqli_stmt_bind_param($stmt, "ssssssssds", $cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senhaHash, $salario, $imagem);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_close($stmt);
             mysqli_close($conexao);
@@ -68,7 +68,7 @@ class BancoDeDados{
             mysqli_close($conexao);
 
             if ($erro->getCode() === 1062) {
-                throw new RuntimeException('CPF ou email ja cadastrado.', 0, $erro);
+               throw new RuntimeException($erro->getMessage(), 0, $erro);
             }
 
             throw $erro;
@@ -83,6 +83,19 @@ class BancoDeDados{
         return $listaClientes;
     }
     
+    public function retornarFuncionarios(){
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT * FROM funcionario";
+        $listaFuncionarios = mysqli_query($conexao,$consulta);
+        return $listaFuncionarios;
+    }
+    
+    public function retornarLojas(){
+        $conexao = $this->conectarBD();
+        $consulta = "SELECT * FROM loja";
+        $listaLojas = mysqli_query($conexao,$consulta);
+        return $listaLojas;
+    }
     
     public function retornarProdutos(){
         $conexao = $this->conectarBD();
@@ -90,7 +103,24 @@ class BancoDeDados{
         $listaProdutos = mysqli_query($conexao,$consulta);
         return $listaProdutos;
     }
-    
+    public function buscarProdutos($busca) {
+    $conexao = $this->conectarBD();
+
+    $termo = "%" . $busca . "%";
+
+    $stmt = mysqli_prepare(
+        $conexao,
+        "SELECT * FROM produto
+         WHERE nome LIKE ?
+            OR fabricante LIKE ?
+            OR descricao LIKE ?"
+    );
+
+    mysqli_stmt_bind_param($stmt, "sss", $termo, $termo, $termo);
+    mysqli_stmt_execute($stmt);
+
+    return mysqli_stmt_get_result($stmt);
+}
     public function inserirCupom($cupom){
     
         $conexao = $this->conectarBD();
@@ -129,22 +159,24 @@ class BancoDeDados{
         $senha = password_hash($loja->getSenha(), PASSWORD_DEFAULT);
     
         $cidade = $loja->getCidade();
+        $imagem = $loja->getImagem();
     
         $stmt = mysqli_prepare(
             $conexao,
-            "INSERT INTO loja (nome, descricao, telefone, email, senha, cidade)
-             VALUES (?, ?, ?, ?, ?, ?)"
+            "INSERT INTO loja (nome, descricao, telefone, email, senha, cidade, imagem)
+             VALUES (?, ?, ?, ?, ?, ?, ?)"
         );
     
         mysqli_stmt_bind_param(
             $stmt,
-            "ssssss",
+            "sssssss",
             $nome,
             $descricao,
             $telefone,
             $email,
             $senha,
-            $cidade
+            $cidade,
+            $imagem
         );
     
         mysqli_stmt_execute($stmt);

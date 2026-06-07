@@ -1,3 +1,16 @@
+<?php
+require_once __DIR__ . '/../controller/Controlador.php';
+
+$controlador = new Controlador();
+
+$busca = isset($_GET['busca']) ? trim($_GET['busca']) : '';
+
+if ($busca != '') {
+    $produtos = $controlador->buscarProdutos($busca);
+} else {
+    $produtos = $controlador->retornarProdutos();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -25,10 +38,10 @@
     <a href="cadastrar_produto.php">Cadastrar Produto</a>
     <a href="cad_loja.php">Cadastrar Loja</a>
     <a href="cad_cupom.php">Cadastrar Cupom</a>
-    <a href="visu_cliente.php">Ver Clientes</a>
-    <a href="visu_funcionario.php">Ver Funcionários</a>
-    <a href="visu_produto.php">Ver Produtos</a>
-    <a href="visu_loja.php">Ver Lojas</a>
+    <a href="visu_clientes.php">Ver Clientes</a>
+    <a href="visu_funcionarios.php">Ver Funcionários</a>
+    <a href="visu_produtos.php">Ver Produtos</a>
+    <a href="visu_lojas.php">Ver Lojas</a>
     <a href="visu_cupom.php">Ver Cupons</a>
     <a href="../index.php">Sair</a>
              </nav>
@@ -38,61 +51,44 @@
     <main>
         <section class="conteudo-produtos">
             <h2 class="produtos-titulo">PRODUTOS</h2>
-
+            <form method="GET" action="visu_produtos.php" class="form-busca">
+    <input type="text" name="busca" placeholder="Buscar produto..." value="<?= htmlspecialchars($busca) ?>">
+    <button type="submit">Buscar</button>
+</form>
             <section class="produtos-grid">
-                <article class="produto-card">
-                    <img src="../img/produto1.png" alt="Produto">
-                    <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-                    <p class="produto-info">
-                        <strong class="label-escuro">Fabricante:</strong> 
-                        <span class="texto-apagado">Eletiva Uniformes</span>
-                    </p>
-                    <p class="produto-info descricao">
-                        <strong class="label-escuro">Descrição:</strong> 
-                        <span class="texto-apagado-coluna">
-                            <span>Uma Camisa ideal</span>
-                            <span>para programar por</span>
-                            <span>mais de 12 horas</span>
-                        </span>
-                    </p>
-                    <section class="produto-rodape">
-                        <span class="produto-preco">R$ 59,90</span>
-                        <span class="produto-estoque">171 disponíveis</span>
-                    </section>
-                </article>
 
-                <article class="produto-card"><img src="../img/produto1.png" alt="P2"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P3"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P4"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P5"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P6"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P7"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
-                <article class="produto-card"><img src="../img/produto1.png" alt="P8"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+<?php while($produto = mysqli_fetch_assoc($produtos)) { ?>
 
-                <article class="produto-card selecionado">
-                    <img src="../img/produto1.png" alt="Produto">
-                    <p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p>
-                    <p class="produto-info">
-                        <strong class="label-escuro">Fabricante:</strong> 
-                        <span class="texto-apagado">Eletiva Uniformes</span>
-                    </p>
-                    <p class="produto-info descricao">
-                        <strong class="label-escuro">Descrição:</strong> 
-                        <span class="texto-apagado-coluna">
-                            <span>Uma Camisa ideal</span>
-                            <span>para programar por</span>
-                            <span>mais de 12 horas</span>
-                        </span>
-                    </p>
-                    <section class="produto-rodape">
-                        <span class="produto-preco">R$ 59,90</span>
-                        <span class="produto-estoque">171 disponíveis</span>
-                    </section>
-                </article>
+    <section class="produto-card">
+        <img src="../img/produtos/<?php echo htmlspecialchars($produto['imagem']); ?>" alt="Produto">
 
-                <article class="produto-card"><img src="../img/produto1.png" alt="P10"><p class="produto-nome">Camisa Desenvolvedor Front-End CSS</p><p class="produto-info"><strong class="label-escuro">Fabricante:</strong> <span class="texto-apagado">Eletiva Uniformes</span></p><p class="produto-info descricao"><strong class="label-escuro">Descrição:</strong> <span class="texto-apagado-coluna"><span>Uma Camisa ideal</span><span>para programar por</span><span>mais de 12 horas</span></span></p><section class="produto-rodape"><span class="produto-preco">R$ 59,90</span><span class="produto-estoque">171 disponíveis</span></section></article>
+        <h3 class="produto-nome"><?php echo htmlspecialchars($produto['nome']); ?></h3>
 
-            </section>
+        <p class="produto-info">
+            <strong>Fabricante:</strong>
+            <?php echo htmlspecialchars($produto['fabricante']); ?>
+        </p>
+
+        <p class="produto-info">
+            <strong>Descrição:</strong>
+            <?php echo htmlspecialchars($produto['descricao']); ?>
+        </p>
+
+        <section class="produto-rodape">
+            <span class="produto-preco">
+                R$ <?php echo number_format($produto['valor'], 2, ',', '.'); ?>
+            </span>
+
+            <span class="produto-estoque">
+                <?php echo $produto['quantidade']; ?> disponíveis
+            </span>
+        </section>
+    </section>
+
+<?php } ?>
+
+</section>
+            
         </section>
     </main>
     

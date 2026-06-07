@@ -101,20 +101,73 @@ if(isset($_POST['inputNomeFunc']) && isset($_POST['inputSobrenomeFunc']) &&
     $senha = $_POST['inputSenhaFunc'];
     $salarioInformado = str_replace(',', '.', trim($_POST['inputSalarioFunc']));
 
+    $nomeFoto = "sem-foto.png";
+
+    if(
+        isset($_FILES['imagemFuncionario']) &&
+        $_FILES['imagemFuncionario']['error'] == 0
+    ){
+
+        $pastaDestino = __DIR__ . "/../img/funcionarios/";
+
+        if(!is_dir($pastaDestino)){
+            mkdir($pastaDestino,0777,true);
+        }
+
+        $nomeFoto = time() . "_" .
+                    basename($_FILES['imagemFuncionario']['name']);
+
+        move_uploaded_file(
+            $_FILES['imagemFuncionario']['tmp_name'],
+            $pastaDestino . $nomeFoto
+        );
+    }
+    $controlador->cadastrarFuncionario(
+        $cpf,
+        $nome,
+        $sobrenome,
+        $dataNasc,
+        $telefone,
+        $cargo,
+        $email,
+        $senha,
+        (float) $salarioInformado,
+        $nomeFoto
+    );
     if (!is_numeric($salarioInformado) || (float) $salarioInformado < 0) {
         error_log('[DEBUG cadastro funcionario] Salario invalido recebido.');
         header('Location:../view/cad_funcionario.php?erro=salario');
         die();
     }
 
-    try {
-        $controlador->cadastrarFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, (float) $salarioInformado);
-        header('Location:../view/cad_funcionario.php?cadastro=sucesso');
-    } catch (Throwable $erro) {
-        // Debug temporario: remover apos validar o cadastro no ambiente local.
-        error_log('[DEBUG cadastro funcionario] ' . $erro->getMessage());
-        header('Location:../view/cad_funcionario.php?erro=cadastro');
+ try {
+    $controlador->cadastrarFuncionario(
+        $cpf,
+        $nome,
+        $sobrenome,
+        $dataNasc,
+        $telefone,
+        $cargo,
+        $email,
+        $senha,
+        (float) $salarioInformado,
+        $nomeFoto
+    );
+
+    header('Location:../view/cad_funcionario.php?cadastro=sucesso');
+    exit;
+
+} catch (Throwable $erro) {
+
+    if (str_contains($erro->getMessage(), 'Duplicate entry')) {
+        header('Location:../view/cad_funcionario.php?erro=duplicado');
+        exit;
     }
+
+    header('Location:../view/cad_funcionario.php?erro=cadastro');
+    exit;
+}
+
     die();
 }
 
@@ -212,16 +265,48 @@ if(
     $senha = $_POST['inputSenhaLoja'];
     $cidade = trim($_POST['inputCidadeLoja']);
 
-    $controlador->cadastrarLoja(
-        $nome,
-        $descricao,
-        $telefone,
-        $email,
-        $senha,
-        $cidade
-    );
+    $nomeImagem = "sem-foto.png";
 
-    header('Location:../view/cad_loja.php?cadastro=sucesso');
-    die();
+    if(
+        isset($_FILES['imagemLoja']) &&
+        $_FILES['imagemLoja']['error'] == 0
+    ){
+        $pastaDestino = __DIR__ . "/../img/lojas/";
+
+        if(!is_dir($pastaDestino)){
+            mkdir($pastaDestino, 0777, true);
+        }
+
+        $nomeImagem = time() . "_" . basename($_FILES['imagemLoja']['name']);
+
+        move_uploaded_file(
+            $_FILES['imagemLoja']['tmp_name'],
+            $pastaDestino . $nomeImagem
+        );
+    }
+
+    try {
+        $controlador->cadastrarLoja(
+            $nome,
+            $descricao,
+            $telefone,
+            $email,
+            $senha,
+            $cidade,
+            $nomeImagem
+        );
+
+        header('Location:../view/cad_loja.php?cadastro=sucesso');
+        exit;
+
+    } catch (Throwable $erro) {
+        if (str_contains($erro->getMessage(), 'Duplicate entry')) {
+            header('Location:../view/cad_loja.php?erro=duplicado');
+            exit;
+        }
+
+        header('Location:../view/cad_loja.php?erro=cadastro');
+        exit;
+    }
 }
 ?>

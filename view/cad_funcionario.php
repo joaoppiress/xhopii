@@ -25,10 +25,10 @@
     <a href="cadastrar_produto.php">Cadastrar Produto</a>
     <a href="cad_loja.php">Cadastrar Loja</a>
     <a href="cad_cupom.php">Cadastrar Cupom</a>
-    <a href="visu_cliente.php">Ver Clientes</a>
-    <a href="visu_funcionario.php">Ver Funcionários</a>
-    <a href="visu_produto.php">Ver Produtos</a>
-    <a href="visu_loja.php">Ver Lojas</a>
+    <a href="visu_clientes.php">Ver Clientes</a>
+    <a href="visu_funcionarios.php">Ver Funcionários</a>
+    <a href="visu_produtos.php">Ver Produtos</a>
+    <a href="visu_lojas.php">Ver Lojas</a>
     <a href="visu_cupom.php">Ver Cupons</a>
 </nav>
         </section>
@@ -36,7 +36,7 @@
   <main>
     <section class="cadastro-funcionario">
         <h2>Cadastrar Funcionário</h2>
-        <form action="../processamento/processamento.php" method="POST">
+        <form action="../processamento/processamento.php" method="POST" enctype="multipart/form-data">
             <input type="text" name="inputNomeFunc" placeholder="Nome" required>
             <input type="text" name="inputSobrenomeFunc" placeholder="Sobrenome" required>
             <input type="text" name="inputCPFFunc" placeholder="CPF" required>
@@ -47,12 +47,15 @@
             <input type="email" name="inputEmailFunc" placeholder="Email" required>
             <input type="password" name="inputSenhaFunc" placeholder="Senha" required>
 
-            <label class="foto-perfil">Selecionar foto de perfil:</label>
             <section class="input-arquivo">
-                <input type="file" id="foto" hidden>
-                <label for="foto" class="btn-arquivo">Escolher arquivo</label>
-                <span>Nenhum arquivo escolhido</span>
-            </section>
+                <input type="file"
+                    id="fotoFuncionario"
+                    name="imagemFuncionario"
+                    accept="image/*"
+                    hidden>
+                <label for="fotoFuncionario" class="btn-arquivo">
+                    Escolher arquivo
+                </label>
 
             <button type="submit">CADASTRAR</button>
         </form>

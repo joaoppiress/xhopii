@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07/06/2026 às 00:30
+-- Tempo de geração: 07/06/2026 às 16:41
 -- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -85,15 +85,18 @@ CREATE TABLE `funcionario` (
   `cargo` varchar(50) NOT NULL,
   `email` varchar(150) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `salario` decimal(10,2) NOT NULL
+  `salario` decimal(10,2) NOT NULL,
+  `imagem` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `funcionario`
 --
 
-INSERT INTO `funcionario` (`id`, `cpf`, `nome`, `sobrenome`, `dataNascimento`, `telefone`, `cargo`, `email`, `senha`, `salario`) VALUES
-(1, '123432121', 'José', 'Santos', '1990-03-12', '12356543', 'Gerente', 'jose@xhopii.com', '$2y$10$5uoj1d0BtP2rd7nNtZ9Kl.6WWLw55clkrViIIvdM4dDNrJdGl9pSq', 10000.00);
+INSERT INTO `funcionario` (`id`, `cpf`, `nome`, `sobrenome`, `dataNascimento`, `telefone`, `cargo`, `email`, `senha`, `salario`, `imagem`) VALUES
+(1, '123432121', 'José', 'Santos', '1990-03-12', '12356543', 'Gerente', 'jose@xhopii.com', '$2y$10$5uoj1d0BtP2rd7nNtZ9Kl.6WWLw55clkrViIIvdM4dDNrJdGl9pSq', 10000.00, ''),
+(5, '123.456.789-00', 'Wellington', 'Rato', '1990-12-12', '(18) 99685-2233', 'Vendedor', 'welllrato@xhopii.com', '$2y$10$Ba8jApkgsbHo6tCVIOJeyOqluNV8WUi/3qD44lYwsQ9oOYbVYgdHu', 1234.00, '1780838118_68d19d84401a4_1758567812.jpg'),
+(8, '123.456.789-11', 'André', 'Careca', '1990-12-12', '1234567891020', 'Vendedor', 'careca@xhopii.com', '$2y$10$YyeqUHkCSAD5g0dhl2EIy.meRhUmisTe5NMCwdYy45ciovzdx/Bze', 1611.00, '1780838605_andre_perfil.jfif');
 
 -- --------------------------------------------------------
 
@@ -109,15 +112,17 @@ CREATE TABLE `loja` (
   `email` varchar(150) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `cidade` varchar(100) DEFAULT NULL,
-  `dataCadastro` datetime DEFAULT current_timestamp()
+  `dataCadastro` datetime DEFAULT current_timestamp(),
+  `imagem` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `loja`
 --
 
-INSERT INTO `loja` (`id`, `nome`, `descricao`, `telefone`, `email`, `senha`, `cidade`, `dataCadastro`) VALUES
-(1, 'Xhopii Prudente', 'Xhopii de Presidente Prudente', '1234567895', 'xprudente@xhopii.com', '$2y$10$db3PWMH5oH4h/Nwjyfjt5OBUJVva2Z0tu5Q64tsk1ZO16iEJOxeUi', 'Presidente Prudente', '2026-06-01 15:42:30');
+INSERT INTO `loja` (`id`, `nome`, `descricao`, `telefone`, `email`, `senha`, `cidade`, `dataCadastro`, `imagem`) VALUES
+(1, 'Xhopii Prudente', 'Xhopii de Presidente Prudente', '1234567895', 'xprudente@xhopii.com', '$2y$10$db3PWMH5oH4h/Nwjyfjt5OBUJVva2Z0tu5Q64tsk1ZO16iEJOxeUi', 'Presidente Prudente', '2026-06-01 15:42:30', ''),
+(3, 'Xhopii Tarabai', 'Xhopii de Tarabai', '12321311312', 'xtarabai@xhopii.com', '$2y$10$C9X5YDALLXF9qDrN3fz/TOlKgru.1U55DPqf8w3AS9p.FwcY4wcXS', 'Tarabai', '2026-06-07 11:17:45', '1780841865_logo.png');
 
 -- --------------------------------------------------------
 
@@ -201,13 +206,13 @@ ALTER TABLE `cupom`
 -- AUTO_INCREMENT de tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `loja`
 --
 ALTER TABLE `loja`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `produto`

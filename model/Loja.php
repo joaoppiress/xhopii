@@ -8,13 +8,15 @@ class Loja {
     private $email;
     private $senha;
     private $cidade;
+    private $imagem;
 
-    public function __construct($nome, $descricao, $telefone, $email, $senha, $cidade){
+    public function __construct($nome, $descricao, $telefone, $email, $senha, $cidade, $imagem = "sem-foto.png") {
         $this->nome = $nome;
         $this->descricao = $descricao;
         $this->telefone = $telefone;
         $this->email = $email;
         $this->senha = $senha;
+        $this->imagem = $imagem;
         $this->cidade = $cidade;
     }
 
@@ -44,7 +46,9 @@ class Loja {
         return $this->cidade;
     }
 
-    
+    public function getImagem(){
+        return $this->imagem;
+    }
 
 
 
@@ -72,6 +76,9 @@ class Loja {
         $this->cidade = $cidade;
     }
 
-}
+    public function setImagem($imagem){
+        $this->imagem = $imagem;
+    }
 
+}
 ?>

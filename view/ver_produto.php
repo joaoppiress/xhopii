@@ -18,12 +18,12 @@
             <nav>
                 <ul>
                     <a href="home.php">Home</a>
-                    <a href="#">Cadastro Cliente</a>
-                    <a href="#">Cadastro Funcionário</a>
-                    <a href="#">Cadastro Produto</a>
-                    <a href="#">Ver Clientes</a>
-                    <a href="#">Ver Funcionários</a>
-                    <a href="#">Ver Produtos</a>
+                    <a href="cad_cliente.php">Cadastro Cliente</a>
+                    <a href="cad_funcionario.php">Cadastro Funcionário</a>
+                    <a href="cadastrar_produto.php">Cadastro Produto</a>
+                    <a href="visu_clientes.php">Ver Clientes</a>
+                    <a href="visu_funcionarios.php">Ver Funcionários</a>
+                    <a href="visu_produtos.php">Ver Produtos</a>
                 </ul>
             </nav>
         </section>

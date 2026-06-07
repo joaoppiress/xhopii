@@ -48,8 +48,8 @@ class Controlador {
         return false;
     }
 
-    public function cadastrarFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario) {
-        $this->bancoDeDados->inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario);
+    public function cadastrarFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario, $imagem) {
+        $this->bancoDeDados->inserirFuncionario($cpf, $nome, $sobrenome, $dataNasc, $telefone, $cargo, $email, $senha, $salario, $imagem);
     }
 
 
@@ -65,7 +65,11 @@ class Controlador {
         );
 
         $this->bancoDeDados->inserirProduto($produto);
-    }
+    }   
+
+    public function buscarProdutos($busca) {
+    return $this->bancoDeDados->buscarProdutos($busca);
+}
 
     public function cadastrarCupom($codigo, $desconto, $validade){
 
@@ -77,7 +81,7 @@ class Controlador {
 
         $this->bancoDeDados->inserirCupom($cupom);
     }
-    public function cadastrarLoja($nome, $descricao, $telefone, $email, $senha, $cidade){
+    public function cadastrarLoja($nome, $descricao, $telefone, $email, $senha, $cidade, $imagem){
 
         $loja = new Loja(
              $nome,
@@ -85,7 +89,8 @@ class Controlador {
              $telefone,
              $email,
              $senha,
-             $cidade
+             $cidade,
+             $imagem
         );
 
         $this->bancoDeDados->inserirLoja($loja);
@@ -97,7 +102,17 @@ class Controlador {
     public function retornarClientes(){
         return $this->bancoDeDados->retornarClientes();
     }
+    
+    public function retornarFuncionarios(){
+        return $this->bancoDeDados->retornarFuncionarios();
+    }
+    
+    public function retornarLojas(){
+        return $this->bancoDeDados->retornarLojas();
+    }
 
+    public function retornarProdutos(){
+        return $this->bancoDeDados->retornarProdutos();
+    }
 }
-
 ?>
