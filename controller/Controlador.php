@@ -121,5 +121,8 @@ class Controlador {
     public function retornarProdutos(){
         return $this->bancoDeDados->retornarProdutos();
     }
+    public function buscarProdutoPorId($id){
+    return $this->bancoDeDados->buscarProdutoPorId($id);
+    }
 }
 ?>

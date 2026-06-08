@@ -58,7 +58,7 @@ if ($busca != '') {
             <section class="produtos-grid">
 
 <?php while($produto = mysqli_fetch_assoc($produtos)) { ?>
-
+<a href="ver_produto.php?id=<?=$produto['id']?>" class="produto-link">
     <section class="produto-card">
         <img src="../img/produtos/<?php echo htmlspecialchars($produto['imagem']); ?>" alt="Produto">
 

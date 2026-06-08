@@ -89,7 +89,7 @@ $produtos = $banco->retornarProdutos();
     <section class="produtos-grid">
 
 <?php while($produto = mysqli_fetch_assoc($produtos)) { ?>
-
+<a href="ver_produto.php?id=<?=$produto['id']?>">
     <section class="produto-card">
         <img src="../img/produtos/<?php echo $produto['imagem']; ?>" alt="Produto">
 

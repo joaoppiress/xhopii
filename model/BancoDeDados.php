@@ -235,6 +235,21 @@ class BancoDeDados{
 
         return false;
     }
+    public function buscarProdutoPorId($id){
+    $conexao = $this->conectarBD();
+
+    $stmt = mysqli_prepare(
+        $conexao,
+        "SELECT * FROM produto WHERE id = ?"
+    );
+
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+
+    return mysqli_fetch_assoc(
+        mysqli_stmt_get_result($stmt)
+    );
+    }
 
     }
     ?>
